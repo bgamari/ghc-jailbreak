@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <psapi.h>
 #include <wchar.h>
+#include <imagehlp.h>
 
 #define USE_BACKUPS 0
 
@@ -72,6 +73,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
     = CreateFile (filepath, GENERIC_READ | GENERIC_WRITE, 0, NULL,
                   OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL |
                   FILE_FLAG_RANDOM_ACCESS | FILE_FLAG_WRITE_THROUGH, NULL);
+  DWORD filesize = GetFileSize (fHwnd, NULL);
 
   if (fHwnd == INVALID_HANDLE_VALUE)
     {
@@ -107,7 +109,23 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
       goto fail;
     }
 
+  printf ("calculating new checksum...\n");
+  DWORD old, new;
+  PIMAGE_NT_HEADERS hdr = CheckSumMappedFile (ptr, filesize, &old, &new);
+  if (hdr == NULL)
+    {
+      printf ("Was unable to compute new checksum. aborting.\n");
+      goto fail;
+    }
+
+  printf ("old checksum 0x%lx, new checksum 0x%lx\n", old, new);
+  hdr->OptionalHeader.CheckSum = new;
+
   printf ("import description table rewritten. Good to go!\n");
+  UnmapViewOfFile (ptr);
+  CloseHandle (fHwnd);
+  CloseHandle (mHwnd);
+  goto end;
 
 fail:
   retcode = 1;
@@ -163,7 +181,7 @@ rewrite_import_address_table (void* ptr)
 
   while (true)
     {
-      const char* name
+     char* name
         = (char*)ImageRvaToVa(ntHeader, ptr, importDesc->Name, NULL);
       if (name == NULL)
         {
@@ -173,9 +191,10 @@ rewrite_import_address_table (void* ptr)
 
       if (strncmp ("msvcrt.dll", name, 10) == 0)
         {
+          char runtime[] = "phxcrt.dll";
           printf ("found C runtime entry (%s). Rewriting..\n", name);
-          *name = "phxcrt.dll";
-          printf ("installed new C runtime entry (%s=>phxcrt.dll)..\n", name);
+          memcpy (name, runtime, 10);
+          printf ("installed new C runtime entry (%s)..\n", runtime);
           return true;
         }
       importDesc++;
