@@ -129,117 +129,117 @@ timezone=msvcrt._timezone
 tzname=msvcrt._tzname
 vsnprintf_s=msvcrt._vsnprintf_s
 longjmp=msvcrt.longjmp DATA
-$I10_OUTPUT
+$I10_OUTPUT=msvcrt.$I10_OUTPUT
 ; public: __cdecl __non_rtti_object::__non_rtti_object(class __non_rtti_object const & __ptr64) __ptr64
 ; GCC = __ZN17__non_rtti_objectC2ERKS_
-??0__non_rtti_object@@QEAA@AEBV0@@Z
+??0__non_rtti_object@@QEAA@AEBV0@@Z=msvcrt.??0__non_rtti_object@@QEAA@AEBV0@@Z
 ; public: __cdecl __non_rtti_object::__non_rtti_object(char const * __ptr64) __ptr64
 ; GCC = __ZN17__non_rtti_objectC1ERKS_
-??0__non_rtti_object@@QEAA@PEBD@Z
+??0__non_rtti_object@@QEAA@PEBD@Z=msvcrt.??0__non_rtti_object@@QEAA@PEBD@Z
 ; private: __cdecl bad_cast::bad_cast(char const * __ptr64 const * __ptr64) __ptr64
-??0bad_cast@@AEAA@PEBQEBD@Z
+??0bad_cast@@AEAA@PEBQEBD@Z=msvcrt.??0bad_cast@@AEAA@PEBQEBD@Z
 ; public: __cdecl bad_cast::bad_cast(char const * __ptr64 const & __ptr64) __ptr64
-??0bad_cast@@QEAA@AEBQEBD@Z
+??0bad_cast@@QEAA@AEBQEBD@Z=msvcrt.??0bad_cast@@QEAA@AEBQEBD@Z
 ; public: __cdecl bad_cast::bad_cast(class bad_cast const & __ptr64) __ptr64
-??0bad_cast@@QEAA@AEBV0@@Z
+??0bad_cast@@QEAA@AEBV0@@Z=msvcrt.??0bad_cast@@QEAA@AEBV0@@Z
 ; public: __cdecl bad_cast::bad_cast(char const * __ptr64) __ptr64
-??0bad_cast@@QEAA@PEBD@Z
+??0bad_cast@@QEAA@PEBD@Z=msvcrt.??0bad_cast@@QEAA@PEBD@Z
 ; public: __cdecl bad_typeid::bad_typeid(class bad_typeid const & __ptr64) __ptr64
-??0bad_typeid@@QEAA@AEBV0@@Z
+??0bad_typeid@@QEAA@AEBV0@@Z=msvcrt.??0bad_typeid@@QEAA@AEBV0@@Z
 ; public: __cdecl bad_typeid::bad_typeid(char const * __ptr64) __ptr64
-??0bad_typeid@@QEAA@PEBD@Z
+??0bad_typeid@@QEAA@PEBD@Z=msvcrt.??0bad_typeid@@QEAA@PEBD@Z
 ; public: __cdecl exception::exception(char const * __ptr64 const & __ptr64) __ptr64
-??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBD@Z=msvcrt.??0exception@@QEAA@AEBQEBD@Z
 ; public: __cdecl exception::exception(char const * __ptr64 const & __ptr64,int) __ptr64
-??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBQEBDH@Z=msvcrt.??0exception@@QEAA@AEBQEBDH@Z
 ; public: __cdecl exception::exception(class exception const & __ptr64) __ptr64
-??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@AEBV0@@Z=msvcrt.??0exception@@QEAA@AEBV0@@Z
 ; public: __cdecl exception::exception(void) __ptr64
-??0exception@@QEAA@XZ
+??0exception@@QEAA@XZ=msvcrt.??0exception@@QEAA@XZ
 ; public: virtual __cdecl __non_rtti_object::~__non_rtti_object(void) __ptr64
-??1__non_rtti_object@@UEAA@XZ
+??1__non_rtti_object@@UEAA@XZ=msvcrt.??1__non_rtti_object@@UEAA@XZ
 ; public: virtual __cdecl bad_cast::~bad_cast(void) __ptr64
-??1bad_cast@@UEAA@XZ
+??1bad_cast@@UEAA@XZ=msvcrt.??1bad_cast@@UEAA@XZ
 ; public: virtual __cdecl bad_typeid::~bad_typeid(void) __ptr64
-??1bad_typeid@@UEAA@XZ
+??1bad_typeid@@UEAA@XZ=msvcrt.??1bad_typeid@@UEAA@XZ
 ; public: virtual __cdecl exception::~exception(void) __ptr64
-??1exception@@UEAA@XZ
+??1exception@@UEAA@XZ=msvcrt.??1exception@@UEAA@XZ
 ; public: virtual __cdecl type_info::~type_info(void) __ptr64
-??1type_info@@UEAA@XZ
+??1type_info@@UEAA@XZ=msvcrt.??1type_info@@UEAA@XZ
 ; void * __ptr64 __cdecl operator new(unsigned __int64)
 ; GCC = __Znwy
-??2@YAPEAX_K@Z
+??2@YAPEAX_K@Z=msvcrt.??2@YAPEAX_K@Z
 ; void __cdecl operator delete(void * __ptr64)
 ; GCC = __ZdlPv
-??3@YAXPEAX@Z
+??3@YAXPEAX@Z=msvcrt.??3@YAXPEAX@Z
 ; public: class __non_rtti_object & __ptr64 __cdecl __non_rtti_object::operator=(class __non_rtti_object const & __ptr64) __ptr64
-??4__non_rtti_object@@QEAAAEAV0@AEBV0@@Z
+??4__non_rtti_object@@QEAAAEAV0@AEBV0@@Z=msvcrt.??4__non_rtti_object@@QEAAAEAV0@AEBV0@@Z
 ; public: class bad_cast & __ptr64 __cdecl bad_cast::operator=(class bad_cast const & __ptr64) __ptr64
-??4bad_cast@@QEAAAEAV0@AEBV0@@Z
+??4bad_cast@@QEAAAEAV0@AEBV0@@Z=msvcrt.??4bad_cast@@QEAAAEAV0@AEBV0@@Z
 ; public: class bad_typeid & __ptr64 __cdecl bad_typeid::operator=(class bad_typeid const & __ptr64) __ptr64
-??4bad_typeid@@QEAAAEAV0@AEBV0@@Z
+??4bad_typeid@@QEAAAEAV0@AEBV0@@Z=msvcrt.??4bad_typeid@@QEAAAEAV0@AEBV0@@Z
 ; public: class exception & __ptr64 __cdecl exception::operator=(class exception const & __ptr64) __ptr64
-??4exception@@QEAAAEAV0@AEBV0@@Z
+??4exception@@QEAAAEAV0@AEBV0@@Z=msvcrt.??4exception@@QEAAAEAV0@AEBV0@@Z
 ; public: int __cdecl type_info::operator==(class type_info const & __ptr64)const __ptr64
-??8type_info@@QEBAHAEBV0@@Z
+??8type_info@@QEBAHAEBV0@@Z=msvcrt.??8type_info@@QEBAHAEBV0@@Z
 ; public: int __cdecl type_info::operator!=(class type_info const & __ptr64)const __ptr64
-??9type_info@@QEBAHAEBV0@@Z
+??9type_info@@QEBAHAEBV0@@Z=msvcrt.??9type_info@@QEBAHAEBV0@@Z
 ; const __non_rtti_object::`vftable'
-??_7__non_rtti_object@@6B@
+??_7__non_rtti_object@@6B@=msvcrt.??_7__non_rtti_object@@6B@
 ; const bad_cast::`vftable'
-??_7bad_cast@@6B@
+??_7bad_cast@@6B@=msvcrt.??_7bad_cast@@6B@
 ; const bad_typeid::`vftable'
-??_7bad_typeid@@6B@
+??_7bad_typeid@@6B@=msvcrt.??_7bad_typeid@@6B@
 ; const exception::`vftable'
-??_7exception@@6B@
+??_7exception@@6B@=msvcrt.??_7exception@@6B@
 ; public: void __cdecl bad_cast::`default constructor closure'(void) __ptr64
-??_Fbad_cast@@QEAAXXZ
+??_Fbad_cast@@QEAAXXZ=msvcrt.??_Fbad_cast@@QEAAXXZ
 ; public: void __cdecl bad_typeid::`default constructor closure'(void) __ptr64
-??_Fbad_typeid@@QEAAXXZ
+??_Fbad_typeid@@QEAAXXZ=msvcrt.??_Fbad_typeid@@QEAAXXZ
 ; void * __ptr64 __cdecl operator new[](unsigned __int64)
 ; GNU = __Znay
-??_U@YAPEAX_K@Z
+??_U@YAPEAX_K@Z=msvcrt.??_U@YAPEAX_K@Z
 ; void __cdecl operator delete[](void * __ptr64)
 ; GNU = __ZdaPv
-??_V@YAXPEAX@Z
+??_V@YAXPEAX@Z=msvcrt.??_V@YAXPEAX@Z
 ; int (__cdecl*__cdecl _query_new_handler(void))(unsigned __int64)
 ; GNU = __Z18_query_new_handlerv
-?_query_new_handler@@YAP6AH_K@ZXZ
+?_query_new_handler@@YAP6AH_K@ZXZ=msvcrt.?_query_new_handler@@YAP6AH_K@ZXZ
 ; int __cdecl _query_new_mode(void)
 ; GNU = __Z15_query_new_modev
-?_query_new_mode@@YAHXZ
+?_query_new_mode@@YAHXZ=msvcrt.?_query_new_mode@@YAHXZ
 ; int (__cdecl*__cdecl _set_new_handler(int (__cdecl*)(unsigned __int64)))(unsigned __int64)
 ; GNU = __Z16_set_new_handlerPFiyE
-?_set_new_handler@@YAP6AH_K@ZP6AH0@Z@Z
+?_set_new_handler@@YAP6AH_K@ZP6AH0@Z@Z=msvcrt.?_set_new_handler@@YAP6AH_K@ZP6AH0@Z@Z
 ; int __cdecl _set_new_mode(int)
 ; GNU = __Z13_set_new_modei
-?_set_new_mode@@YAHH@Z
+?_set_new_mode@@YAHH@Z=msvcrt.?_set_new_mode@@YAHH@Z
 ; void (__cdecl*__cdecl _set_se_translator(void (__cdecl*)(unsigned int,struct _EXCEPTION_POINTERS * __ptr64)))(unsigned int,struct _EXCEPTION_POINTERS * __ptr64)
 ; GNU = __Z18_set_se_translatorPFvjP19_EXCEPTION_POINTERSE
-?_set_se_translator@@YAP6AXIPEAU_EXCEPTION_POINTERS@@@ZP6AXI0@Z@Z
+?_set_se_translator@@YAP6AXIPEAU_EXCEPTION_POINTERS@@@ZP6AXI0@Z@Z=msvcrt.?_set_se_translator@@YAP6AXIPEAU_EXCEPTION_POINTERS@@@ZP6AXI0@Z@Z
 ; public: int __cdecl type_info::before(class type_info const & __ptr64)const __ptr64
-?before@type_info@@QEBAHAEBV1@@Z
+?before@type_info@@QEBAHAEBV1@@Z=msvcrt.?before@type_info@@QEBAHAEBV1@@Z
 ; public: char const * __ptr64 __cdecl type_info::name(void)const __ptr64
-?name@type_info@@QEBAPEBDXZ
+?name@type_info@@QEBAPEBDXZ=msvcrt.?name@type_info@@QEBAPEBDXZ
 ; public: char const * __ptr64 __cdecl type_info::raw_name(void)const __ptr64
-?raw_name@type_info@@QEBAPEBDXZ
+?raw_name@type_info@@QEBAPEBDXZ=msvcrt.?raw_name@type_info@@QEBAPEBDXZ
 ; void (__cdecl*__cdecl set_new_handler(void (__cdecl*)(void)))(void)
 ; GNU = __Z15set_new_handlerPFvvE
-?set_new_handler@@YAP6AXXZP6AXXZ@Z
+?set_new_handler@@YAP6AXXZP6AXXZ@Z=msvcrt.?set_new_handler@@YAP6AXXZP6AXXZ@Z
 ; void (__cdecl*__cdecl set_terminate(void (__cdecl*)(void)))(void)
 ; GNU = __Z13set_terminatePFvvE
-?set_terminate@@YAP6AXXZP6AXXZ@Z
+?set_terminate@@YAP6AXXZP6AXXZ@Z=msvcrt.?set_terminate@@YAP6AXXZP6AXXZ@Z
 ; void (__cdecl*__cdecl set_unexpected(void (__cdecl*)(void)))(void)
 ; GNU = __Z14set_unexpectedPFvvE
-?set_unexpected@@YAP6AXXZP6AXXZ@Z
+?set_unexpected@@YAP6AXXZP6AXXZ@Z=msvcrt.?set_unexpected@@YAP6AXXZP6AXXZ@Z
 ; void __cdecl terminate(void)
 ; GNU = __Z9terminatev
-?terminate@@YAXXZ
+?terminate@@YAXXZ=msvcrt.?terminate@@YAXXZ
 ; void __cdecl unexpected(void)
 ; GNU = __Z10unexpectedv
-?unexpected@@YAXXZ
+?unexpected@@YAXXZ=msvcrt.?unexpected@@YAXXZ
 ; public: virtual char const * __ptr64 __cdecl exception::what(void)const __ptr64
-?what@exception@@UEBAPEBDXZ
+?what@exception@@UEBAPEBDXZ=msvcrt.?what@exception@@UEBAPEBDXZ
 _CxxThrowException=msvcrt._CxxThrowException
 
 _Getdays=msvcrt._Getdays

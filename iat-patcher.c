@@ -51,7 +51,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
 
   int retcode = 0;
 
-  wchar_t* filepath = __hs_create_device_name (argv[2]);
+  wchar_t* filepath = FS(create_device_name) (argv[2]);
   if (wcslen (filepath) == 0)
     goto fail;
   int flen = wcslen (filepath)+5;
