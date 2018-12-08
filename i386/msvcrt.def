@@ -1,1492 +1,1492 @@
 LIBRARY "msvcrt.dll"
 EXPORTS
-iscsymf == __iscsymf
-iscsym == __iscsym
-isascii == __isascii
-toascii == __toascii
-wcscmpi == _wcsicmp
-strcasecmp == _stricmp
-strncasecmp == _strnicmp
-access == _access
-chdir == _chdir
-chmod == _chmod
-chsize == _chsize
-close == _close
-creat == _creat
-cwait == _cwait
-dup == _dup
-dup2 == _dup2
-ecvt == _ecvt
-eof == _eof
-execl == _execl
-execle == _execle
-execlp == _execlp
-execlpe == _execlpe
-execv == _execv
-execve == _execve
-execvp == _execvp
-execvpe == _execvpe
-fcvt == _fcvt
-fdopen == _fdopen
-fgetchar == _fgetchar
-fgetwchar == _fgetwchar
-filelength == _filelength
-fileno == _fileno
+iscsymf=msvcrt.__iscsymf
+iscsym=msvcrt.__iscsym
+isascii=msvcrt.__isascii
+toascii=msvcrt.__toascii
+wcscmpi=msvcrt._wcsicmp
+strcasecmp=msvcrt._stricmp
+strncasecmp=msvcrt._strnicmp
+access=msvcrt._access
+chdir=msvcrt._chdir
+chmod=msvcrt._chmod
+chsize=msvcrt._chsize
+close=msvcrt._close
+creat=msvcrt._creat
+cwait=msvcrt._cwait
+dup=msvcrt._dup
+dup2=msvcrt._dup2
+ecvt=msvcrt._ecvt
+eof=msvcrt._eof
+execl=msvcrt._execl
+execle=msvcrt._execle
+execlp=msvcrt._execlp
+execlpe=msvcrt._execlpe
+execv=msvcrt._execv
+execve=msvcrt._execve
+execvp=msvcrt._execvp
+execvpe=msvcrt._execvpe
+fcvt=msvcrt._fcvt
+fdopen=msvcrt._fdopen
+fgetchar=msvcrt._fgetchar
+fgetwchar=msvcrt._fgetwchar
+filelength=msvcrt._filelength
+fileno=msvcrt._fileno
 ; fpreset)
-fputchar == _fputchar
-fputwchar == _fputwchar
+fputchar=msvcrt._fputchar
+fputwchar=msvcrt._fputwchar
 ;fstat)
 ;ftime)
-gcvt == _gcvt
-getch == _getch
-getche == _getche
-getcwd == _getcwd
-getpid == _getpid
-getw == _getw
-heapwalk == _heapwalk
-isatty == _isatty
-itoa == _itoa
-kbhit == _kbhit
-lfind == _lfind
-lsearch == _lsearch
-lseek == _lseek
-ltoa == _ltoa
-memccpy == _memccpy
-memicmp == _memicmp
-mkdir == _mkdir
-mktemp == _mktemp
-open == _open
-pclose == _pclose
-popen == _popen
-putch == _putch
-putenv == _putenv
-putw == _putw
-read == _read
-rmdir == _rmdir
-rmtmp == _rmtmp
-searchenv == _searchenv
-setmode == _setmode
-sopen == _sopen
-spawnl == _spawnl
-spawnle == _spawnle
-spawnlp == _spawnlp
-spawnlpe == _spawnlpe
-spawnv == _spawnv
-spawnve == _spawnve
-spawnvp == _spawnvp
-spawnvpe == _spawnvpe
+gcvt=msvcrt._gcvt
+getch=msvcrt._getch
+getche=msvcrt._getche
+getcwd=msvcrt._getcwd
+getpid=msvcrt._getpid
+getw=msvcrt._getw
+heapwalk=msvcrt._heapwalk
+isatty=msvcrt._isatty
+itoa=msvcrt._itoa
+kbhit=msvcrt._kbhit
+lfind=msvcrt._lfind
+lsearch=msvcrt._lsearch
+lseek=msvcrt._lseek
+ltoa=msvcrt._ltoa
+memccpy=msvcrt._memccpy
+memicmp=msvcrt._memicmp
+mkdir=msvcrt._mkdir
+mktemp=msvcrt._mktemp
+open=msvcrt._open
+pclose=msvcrt._pclose
+popen=msvcrt._popen
+putch=msvcrt._putch
+putenv=msvcrt._putenv
+putw=msvcrt._putw
+read=msvcrt._read
+rmdir=msvcrt._rmdir
+rmtmp=msvcrt._rmtmp
+searchenv=msvcrt._searchenv
+setmode=msvcrt._setmode
+sopen=msvcrt._sopen
+spawnl=msvcrt._spawnl
+spawnle=msvcrt._spawnle
+spawnlp=msvcrt._spawnlp
+spawnlpe=msvcrt._spawnlpe
+spawnv=msvcrt._spawnv
+spawnve=msvcrt._spawnve
+spawnvp=msvcrt._spawnvp
+spawnvpe=msvcrt._spawnvpe
 ;stat)
-strcmpi == _strcmpi
-strdup == _strdup
-stricmp == _stricmp
-stricoll == _stricoll
-strlwr == _strlwr
-strnicmp == _strnicmp
-strnset == _strnset
-strrev == _strrev
-strset == _strset
-strupr == _strupr
-swab == _swab
-tell == _tell
-tempnam == _tempnam
-tzset == _tzset
-umask == _umask
-ungetch == _ungetch
-unlink == _unlink
-utime == _utime
-wcsdup == _wcsdup
-wcsicmp == _wcsicmp
-wcsicoll == _wcsicoll
-wcslwr == _wcslwr
-wcsnicmp == _wcsnicmp
-wcsnset == _wcsnset
-wcsrev == _wcsrev
-wcsset == _wcsset
-wcsupr == _wcsupr
-wpopen == _wpopen
-write == _write
+strcmpi=msvcrt._strcmpi
+strdup=msvcrt._strdup
+stricmp=msvcrt._stricmp
+stricoll=msvcrt._stricoll
+strlwr=msvcrt._strlwr
+strnicmp=msvcrt._strnicmp
+strnset=msvcrt._strnset
+strrev=msvcrt._strrev
+strset=msvcrt._strset
+strupr=msvcrt._strupr
+swab=msvcrt._swab
+tell=msvcrt._tell
+tempnam=msvcrt._tempnam
+tzset=msvcrt._tzset
+umask=msvcrt._umask
+ungetch=msvcrt._ungetch
+unlink=msvcrt._unlink
+utime=msvcrt._utime
+wcsdup=msvcrt._wcsdup
+wcsicmp=msvcrt._wcsicmp
+wcsicoll=msvcrt._wcsicoll
+wcslwr=msvcrt._wcslwr
+wcsnicmp=msvcrt._wcsnicmp
+wcsnset=msvcrt._wcsnset
+wcsrev=msvcrt._wcsrev
+wcsset=msvcrt._wcsset
+wcsupr=msvcrt._wcsupr
+wpopen=msvcrt._wpopen
+write=msvcrt._write
 ; non-ANSI functions declared in math.h
-j0 == _j0
-j1 == _j1
-jn == _jn
-y0 == _y0
-y1 == _y1
-yn == _yn
-chgsign == _chgsign
+j0=msvcrt._j0
+j1=msvcrt._j1
+jn=msvcrt._jn
+y0=msvcrt._y0
+y1=msvcrt._y1
+yn=msvcrt._yn
+chgsign=msvcrt._chgsign
 ;scalb
-finite == _finite
-fpclass == _fpclass
+finite=msvcrt._finite
+fpclass=msvcrt._fpclass
 ; C99 functions
 ;cabs
-hypot == _hypot
+hypot=msvcrt._hypot
 ;logb
-nextafter == _nextafter
-_daylight DATA
-_timezone DATA
-_tzname DATA
-daylight == _daylight
-timezone == _timezone
-tzname == _tzname
-vsnprintf_s == _vsnprintf_s
-longjmp DATA
-_CIacos
-_CIasin
-_CIatan
-_CIatan2
-_CIcos
-_CIcosh
-_CIexp
-_CIfmod
-_CIlog
-_CIlog10
-_CIpow
-_CIsin
-_CIsinh
-_CIsqrt
-_CItan
-_CItanh
-_CxxThrowException
-_EH_prolog
-_Getdays
-_Getmonths
-_Gettnames
-_HUGE DATA
-_Strftime
+nextafter=msvcrt._nextafter
+_daylight=msvcrt._daylight DATA
+_timezone=msvcrt._timezone DATA
+_tzname=msvcrt._tzname DATA
+daylight=msvcrt._daylight
+timezone=msvcrt._timezone
+tzname=msvcrt._tzname
+vsnprintf_s=msvcrt._vsnprintf_s
+longjmp=msvcrt.longjmp DATA
+_CIacos=msvcrt._CIacos
+_CIasin=msvcrt._CIasin
+_CIatan=msvcrt._CIatan
+_CIatan2=msvcrt._CIatan2
+_CIcos=msvcrt._CIcos
+_CIcosh=msvcrt._CIcosh
+_CIexp=msvcrt._CIexp
+_CIfmod=msvcrt._CIfmod
+_CIlog=msvcrt._CIlog
+_CIlog10=msvcrt._CIlog10
+_CIpow=msvcrt._CIpow
+_CIsin=msvcrt._CIsin
+_CIsinh=msvcrt._CIsinh
+_CIsqrt=msvcrt._CIsqrt
+_CItan=msvcrt._CItan
+_CItanh=msvcrt._CItanh
+_CxxThrowException=msvcrt._CxxThrowException
+_EH_prolog=msvcrt._EH_prolog
+_Getdays=msvcrt._Getdays
+_Getmonths=msvcrt._Getmonths
+_Gettnames=msvcrt._Gettnames
+_HUGE=msvcrt._HUGE DATA
+_Strftime=msvcrt._Strftime
 
 
 
 
-_XcptFilter
+_XcptFilter=msvcrt._XcptFilter
 
 
-__CppXcptFilter
-__CxxCallUnwindDtor
-__CxxCallUnwindVecDtor
-__CxxDetectRethrow
-__CxxExceptionFilter
-__CxxFrameHandler
+__CppXcptFilter=msvcrt.__CppXcptFilter
+__CxxCallUnwindDtor=msvcrt.__CxxCallUnwindDtor
+__CxxCallUnwindVecDtor=msvcrt.__CxxCallUnwindVecDtor
+__CxxDetectRethrow=msvcrt.__CxxDetectRethrow
+__CxxExceptionFilter=msvcrt.__CxxExceptionFilter
+__CxxFrameHandler=msvcrt.__CxxFrameHandler
 
-__CxxLongjmpUnwind
-__CxxQueryExceptionSize
-__CxxRegisterExceptionObject
-__CxxUnregisterExceptionObject
-__DestructExceptionObject
-__RTCastToVoid
-__RTDynamicCast
-__RTtypeid
-__STRINGTOLD
+__CxxLongjmpUnwind=msvcrt.__CxxLongjmpUnwind
+__CxxQueryExceptionSize=msvcrt.__CxxQueryExceptionSize
+__CxxRegisterExceptionObject=msvcrt.__CxxRegisterExceptionObject
+__CxxUnregisterExceptionObject=msvcrt.__CxxUnregisterExceptionObject
+__DestructExceptionObject=msvcrt.__DestructExceptionObject
+__RTCastToVoid=msvcrt.__RTCastToVoid
+__RTDynamicCast=msvcrt.__RTDynamicCast
+__RTtypeid=msvcrt.__RTtypeid
+__STRINGTOLD=msvcrt.__STRINGTOLD
 
-___lc_collate_cp_func
-___lc_handle_func
-___mb_cur_max_func
-___setlc_active_func
-___unguarded_readlc_active_add_func
-__argc DATA
-__argv DATA
-__badioinfo DATA
-__buffer_overrun
-__crtCompareStringA
-__crtCompareStringW
-__crtGetLocaleInfoW
-__crtGetStringTypeW
-__crtLCMapStringA
-__crtLCMapStringW
+___lc_collate_cp_func=msvcrt.___lc_collate_cp_func
+___lc_handle_func=msvcrt.___lc_handle_func
+___mb_cur_max_func=msvcrt.___mb_cur_max_func
+___setlc_active_func=msvcrt.___setlc_active_func
+___unguarded_readlc_active_add_func=msvcrt.___unguarded_readlc_active_add_func
+__argc=msvcrt.__argc DATA
+__argv=msvcrt.__argv DATA
+__badioinfo=msvcrt.__badioinfo DATA
+__buffer_overrun=msvcrt.__buffer_overrun
+__crtCompareStringA=msvcrt.__crtCompareStringA
+__crtCompareStringW=msvcrt.__crtCompareStringW
+__crtGetLocaleInfoW=msvcrt.__crtGetLocaleInfoW
+__crtGetStringTypeW=msvcrt.__crtGetStringTypeW
+__crtLCMapStringA=msvcrt.__crtLCMapStringA
+__crtLCMapStringW=msvcrt.__crtLCMapStringW
 
-__dllonexit
-__doserrno
+__dllonexit=msvcrt.__dllonexit
+__doserrno=msvcrt.__doserrno
 
-__fpecode
-__getmainargs
-__initenv DATA
-__iob_func
-__isascii
-__iscsym
-__iscsymf
-__lc_clike
-__lc_codepage DATA
-__lc_collate_cp DATA
-__lc_handle DATA
-__lconv_init
-__mb_cur_max DATA
-__p___argc
-__p___argv
-__p___initenv
-__p___mb_cur_max
-__p___wargv
-__p___winitenv
-__p__acmdln
-__p__amblksiz
-__p__commode
-__p__daylight
-__p__dstbias
-__p__environ
-__p__fileinfo
-__p__fmode
-__p__iob
-__p__mbcasemap
-__p__mbctype
-__p__osver
-__p__pctype
-__p__pgmptr
-__p__pwctype
-__p__timezone
-__p__tzname
-__p__wcmdln
-__p__wenviron
-__p__winmajor
-__p__winminor
-__p__winver
-__p__wpgmptr
-__pctype_func
-__pioinfo DATA
-__pwctype_func
-__pxcptinfoptrs
-__security_error_handler
-__set_app_type
-__set_buffer_overrun_handler
-__setlc_active DATA
-__setusermatherr
+__fpecode=msvcrt.__fpecode
+__getmainargs=msvcrt.__getmainargs
+__initenv=msvcrt.__initenv DATA
+__iob_func=msvcrt.__iob_func
+__isascii=msvcrt.__isascii
+__iscsym=msvcrt.__iscsym
+__iscsymf=msvcrt.__iscsymf
+__lc_clike=msvcrt.__lc_clike
+__lc_codepage=msvcrt.__lc_codepage DATA
+__lc_collate_cp=msvcrt.__lc_collate_cp DATA
+__lc_handle=msvcrt.__lc_handle DATA
+__lconv_init=msvcrt.__lconv_init
+__mb_cur_max=msvcrt.__mb_cur_max DATA
+__p___argc=msvcrt.__p___argc
+__p___argv=msvcrt.__p___argv
+__p___initenv=msvcrt.__p___initenv
+__p___mb_cur_max=msvcrt.__p___mb_cur_max
+__p___wargv=msvcrt.__p___wargv
+__p___winitenv=msvcrt.__p___winitenv
+__p__acmdln=msvcrt.__p__acmdln
+__p__amblksiz=msvcrt.__p__amblksiz
+__p__commode=msvcrt.__p__commode
+__p__daylight=msvcrt.__p__daylight
+__p__dstbias=msvcrt.__p__dstbias
+__p__environ=msvcrt.__p__environ
+__p__fileinfo=msvcrt.__p__fileinfo
+__p__fmode=msvcrt.__p__fmode
+__p__iob=msvcrt.__p__iob
+__p__mbcasemap=msvcrt.__p__mbcasemap
+__p__mbctype=msvcrt.__p__mbctype
+__p__osver=msvcrt.__p__osver
+__p__pctype=msvcrt.__p__pctype
+__p__pgmptr=msvcrt.__p__pgmptr
+__p__pwctype=msvcrt.__p__pwctype
+__p__timezone=msvcrt.__p__timezone
+__p__tzname=msvcrt.__p__tzname
+__p__wcmdln=msvcrt.__p__wcmdln
+__p__wenviron=msvcrt.__p__wenviron
+__p__winmajor=msvcrt.__p__winmajor
+__p__winminor=msvcrt.__p__winminor
+__p__winver=msvcrt.__p__winver
+__p__wpgmptr=msvcrt.__p__wpgmptr
+__pctype_func=msvcrt.__pctype_func
+__pioinfo=msvcrt.__pioinfo DATA
+__pwctype_func=msvcrt.__pwctype_func
+__pxcptinfoptrs=msvcrt.__pxcptinfoptrs
+__security_error_handler=msvcrt.__security_error_handler
+__set_app_type=msvcrt.__set_app_type
+__set_buffer_overrun_handler=msvcrt.__set_buffer_overrun_handler
+__setlc_active=msvcrt.__setlc_active DATA
+__setusermatherr=msvcrt.__setusermatherr
 
-__threadhandle
-__threadid
-__toascii
-__uncaught_exception
-__unDName
-__unDNameEx
-__unguarded_readlc_active DATA
-__wargv DATA
-__wcserror
+__threadhandle=msvcrt.__threadhandle
+__threadid=msvcrt.__threadid
+__toascii=msvcrt.__toascii
+__uncaught_exception=msvcrt.__uncaught_exception
+__unDName=msvcrt.__unDName
+__unDNameEx=msvcrt.__unDNameEx
+__unguarded_readlc_active=msvcrt.__unguarded_readlc_active DATA
+__wargv=msvcrt.__wargv DATA
+__wcserror=msvcrt.__wcserror
 
 
-__wgetmainargs
-__winitenv DATA
-_abnormal_termination
+__wgetmainargs=msvcrt.__wgetmainargs
+__winitenv=msvcrt.__winitenv DATA
+_abnormal_termination=msvcrt._abnormal_termination
 
-_access
+_access=msvcrt._access
 ; _access_s Replaced by emu
-_acmdln DATA
-_adj_fdiv_m16i
-_adj_fdiv_m32
-_adj_fdiv_m32i
-_adj_fdiv_m64
-_adj_fdiv_r
-_adj_fdivr_m16i
-_adj_fdivr_m32
-_adj_fdivr_m32i
-_adj_fdivr_m64
-_adj_fpatan
-_adj_fprem
-_adj_fprem1
-_adj_fptan
-_adjust_fdiv DATA
-_aexit_rtn DATA
-_aligned_free
+_acmdln=msvcrt._acmdln DATA
+_adj_fdiv_m16i=msvcrt._adj_fdiv_m16i
+_adj_fdiv_m32=msvcrt._adj_fdiv_m32
+_adj_fdiv_m32i=msvcrt._adj_fdiv_m32i
+_adj_fdiv_m64=msvcrt._adj_fdiv_m64
+_adj_fdiv_r=msvcrt._adj_fdiv_r
+_adj_fdivr_m16i=msvcrt._adj_fdivr_m16i
+_adj_fdivr_m32=msvcrt._adj_fdivr_m32
+_adj_fdivr_m32i=msvcrt._adj_fdivr_m32i
+_adj_fdivr_m64=msvcrt._adj_fdivr_m64
+_adj_fpatan=msvcrt._adj_fpatan
+_adj_fprem=msvcrt._adj_fprem
+_adj_fprem1=msvcrt._adj_fprem1
+_adj_fptan=msvcrt._adj_fptan
+_adjust_fdiv=msvcrt._adjust_fdiv DATA
+_aexit_rtn=msvcrt._aexit_rtn DATA
+_aligned_free=msvcrt._aligned_free
 
-_aligned_malloc
+_aligned_malloc=msvcrt._aligned_malloc
 
-_aligned_offset_malloc
+_aligned_offset_malloc=msvcrt._aligned_offset_malloc
 
-_aligned_offset_realloc
+_aligned_offset_realloc=msvcrt._aligned_offset_realloc
 
-_aligned_realloc
+_aligned_realloc=msvcrt._aligned_realloc
 
-_amsg_exit
-_assert DATA
-_atodbl
-_atodbl_l
-_atof_l
-_atoflt_l
-_atoi64
-_atoi64_l
-_atoi_l
-_atol_l
-_atoldbl
+_amsg_exit=msvcrt._amsg_exit
+_assert=msvcrt._assert DATA
+_atodbl=msvcrt._atodbl
+_atodbl_l=msvcrt._atodbl_l
+_atof_l=msvcrt._atof_l
+_atoflt_l=msvcrt._atoflt_l
+_atoi64=msvcrt._atoi64
+_atoi64_l=msvcrt._atoi64_l
+_atoi_l=msvcrt._atoi_l
+_atol_l=msvcrt._atol_l
+_atoldbl=msvcrt._atoldbl
 
-_beep
-_beginthread
-_beginthreadex
-_c_exit
-_cabs DATA
-_callnewh
+_beep=msvcrt._beep
+_beginthread=msvcrt._beginthread
+_beginthreadex=msvcrt._beginthreadex
+_c_exit=msvcrt._c_exit
+_cabs=msvcrt._cabs DATA
+_callnewh=msvcrt._callnewh
 
-_cexit
-_cgets
+_cexit=msvcrt._cexit
+_cgets=msvcrt._cgets
 ; _cgets_s replaced by emu
-_cgetws
+_cgetws=msvcrt._cgetws
 ; _cgetws_s replaced by emu
-_chdir
-_chdrive
-_chgsign
+_chdir=msvcrt._chdir
+_chdrive=msvcrt._chdrive
+_chgsign=msvcrt._chgsign
 
-_chmod
-_chkesp
-_chsize
+_chmod=msvcrt._chmod
+_chkesp=msvcrt._chkesp
+_chsize=msvcrt._chsize
 ; _chsize_s replaced by emu
 
 
-_clearfp
-_close
-_commit
-_commode DATA
-_control87
-_controlfp
+_clearfp=msvcrt._clearfp
+_close=msvcrt._close
+_commit=msvcrt._commit
+_commode=msvcrt._commode DATA
+_control87=msvcrt._control87
+_controlfp=msvcrt._controlfp
 ; _controlfp_s replaced by emu
-_copysign
+_copysign=msvcrt._copysign
 
-_cprintf
-_cprintf_l
-_cprintf_p
-_cprintf_p_l
+_cprintf=msvcrt._cprintf
+_cprintf_l=msvcrt._cprintf_l
+_cprintf_p=msvcrt._cprintf_p
+_cprintf_p_l=msvcrt._cprintf_p_l
 ; _cprintf_s Replaced by emu
 ; _cprintf_s_l likewise.
-_cputs
-_cputws
-_CRT_RTC_INIT
-_creat
-_create_locale
+_cputs=msvcrt._cputs
+_cputws=msvcrt._cputws
+_CRT_RTC_INIT=msvcrt._CRT_RTC_INIT
+_creat=msvcrt._creat
+_create_locale=msvcrt._create_locale
 
 
 
-_cscanf
-_cscanf_l
-_cscanf_s
-_cscanf_s_l
+_cscanf=msvcrt._cscanf
+_cscanf_l=msvcrt._cscanf_l
+_cscanf_s=msvcrt._cscanf_s
+_cscanf_s_l=msvcrt._cscanf_s_l
 
-_ctime32 == ctime
+_ctime32=msvcrt.ctime
 ; _ctime32_s replaced by emu
-_ctime64
+_ctime64=msvcrt._ctime64
 ; _ctime64_s replaced by emu
-_ctype DATA
-_cwait
-_cwprintf
-_cwprintf_l
-_cwprintf_p
-_cwprintf_p_l
+_ctype=msvcrt._ctype DATA
+_cwait=msvcrt._cwait
+_cwprintf=msvcrt._cwprintf
+_cwprintf_l=msvcrt._cwprintf_l
+_cwprintf_p=msvcrt._cwprintf_p
+_cwprintf_p_l=msvcrt._cwprintf_p_l
 ; _cwprintf_s Replaced by emu
 ; _cwprintf_s_l Likewise.
-_cwscanf
-_cwscanf_l
-_cwscanf_s
-_cwscanf_s_l
-_dstbias DATA
+_cwscanf=msvcrt._cwscanf
+_cwscanf_l=msvcrt._cwscanf_l
+_cwscanf_s=msvcrt._cwscanf_s
+_cwscanf_s_l=msvcrt._cwscanf_s_l
+_dstbias=msvcrt._dstbias DATA
 
 
 
-_dup
-_dup2
-_ecvt
-_ecvt_s
-_endthread
-_endthreadex
-_environ DATA
-_eof
-_errno
-_except_handler2
-_except_handler3
-_execl
-_execle
-_execlp
-_execlpe
-_execv
-_execve
-_execvp
-_execvpe
-_exit
-_expand
+_dup=msvcrt._dup
+_dup2=msvcrt._dup2
+_ecvt=msvcrt._ecvt
+_ecvt_s=msvcrt._ecvt_s
+_endthread=msvcrt._endthread
+_endthreadex=msvcrt._endthreadex
+_environ=msvcrt._environ DATA
+_eof=msvcrt._eof
+_errno=msvcrt._errno
+_except_handler2=msvcrt._except_handler2
+_except_handler3=msvcrt._except_handler3
+_execl=msvcrt._execl
+_execle=msvcrt._execle
+_execlp=msvcrt._execlp
+_execlpe=msvcrt._execlpe
+_execv=msvcrt._execv
+_execve=msvcrt._execve
+_execvp=msvcrt._execvp
+_execvpe=msvcrt._execvpe
+_exit=msvcrt._exit
+_expand=msvcrt._expand
 
-_fcloseall
-_fcvt
-_fcvt_s
-_fdopen
-_fgetchar
-_fgetwchar
-_filbuf
-_fileinfo DATA
-_filelength
-_filelengthi64
-_fileno
-_findclose
-_findfirst
-_findfirst32 == _findfirst
-_findfirst64
-_findfirsti64
-_findfirst32i64 == _findfirsti64
+_fcloseall=msvcrt._fcloseall
+_fcvt=msvcrt._fcvt
+_fcvt_s=msvcrt._fcvt_s
+_fdopen=msvcrt._fdopen
+_fgetchar=msvcrt._fgetchar
+_fgetwchar=msvcrt._fgetwchar
+_filbuf=msvcrt._filbuf
+_fileinfo=msvcrt._fileinfo DATA
+_filelength=msvcrt._filelength
+_filelengthi64=msvcrt._filelengthi64
+_fileno=msvcrt._fileno
+_findclose=msvcrt._findclose
+_findfirst=msvcrt._findfirst
+_findfirst32=msvcrt._findfirst
+_findfirst64=msvcrt._findfirst64
+_findfirsti64=msvcrt._findfirsti64
+_findfirst32i64=msvcrt._findfirsti64
 
-_findnext
-_findnext32 == _findnext
-_findnext64
-_findnexti64
-_findnext32i64 == _findnexti64
+_findnext=msvcrt._findnext
+_findnext32=msvcrt._findnext
+_findnext64=msvcrt._findnext64
+_findnexti64=msvcrt._findnexti64
+_findnext32i64=msvcrt._findnexti64
 
-_finite
+_finite=msvcrt._finite
 
-_flsbuf
-_flushall
-_fmode DATA
-_fpclass
+_flsbuf=msvcrt._flsbuf
+_flushall=msvcrt._flushall
+_fmode=msvcrt._fmode DATA
+_fpclass=msvcrt._fpclass
 
-_fpieee_flt
+_fpieee_flt=msvcrt._fpieee_flt
 
-_fpreset DATA
-_fprintf_l
-_fprintf_p
-_fprintf_p_l
-_fprintf_s_l
-_fputchar
-_fputwchar
+_fpreset=msvcrt._fpreset DATA
+_fprintf_l=msvcrt._fprintf_l
+_fprintf_p=msvcrt._fprintf_p
+_fprintf_p_l=msvcrt._fprintf_p_l
+_fprintf_s_l=msvcrt._fprintf_s_l
+_fputchar=msvcrt._fputchar
+_fputwchar=msvcrt._fputwchar
 
-_free_locale
-
-
-
-
-_fstat
-_fstat32 == _fstat
-_fstat64
-_fstati64
-
-_ftime
-
-_ftime32_s
-_ftime64
-_ftime64_s
-_ftime_s == _ftime32_s
-
-_ftol
-_fullpath
-
-_futime
-
-_futime64
-_fwprintf_l
-_fwprintf_p
-_fwprintf_p_l
-_fwprintf_s_l
-_fwscanf_l
-_fwscanf_s_l
-_gcvt
-_gcvt_s
+_free_locale=msvcrt._free_locale
 
 
 
 
+_fstat=msvcrt._fstat
+_fstat32=msvcrt._fstat
+_fstat64=msvcrt._fstat64
+_fstati64=msvcrt._fstati64
+
+_ftime=msvcrt._ftime
+
+_ftime32_s=msvcrt._ftime32_s
+_ftime64=msvcrt._ftime64
+_ftime64_s=msvcrt._ftime64_s
+_ftime_s=msvcrt._ftime32_s
+
+_ftol=msvcrt._ftol
+_fullpath=msvcrt._fullpath
+
+_futime=msvcrt._futime
+
+_futime64=msvcrt._futime64
+_fwprintf_l=msvcrt._fwprintf_l
+_fwprintf_p=msvcrt._fwprintf_p
+_fwprintf_p_l=msvcrt._fwprintf_p_l
+_fwprintf_s_l=msvcrt._fwprintf_s_l
+_fwscanf_l=msvcrt._fwscanf_l
+_fwscanf_s_l=msvcrt._fwscanf_s_l
+_gcvt=msvcrt._gcvt
+_gcvt_s=msvcrt._gcvt_s
 
 
-_get_heap_handle
-_get_osfhandle
+
+
+
+
+_get_heap_handle=msvcrt._get_heap_handle
+_get_osfhandle=msvcrt._get_osfhandle
 ;_get_output_format provided by emu
-_get_sbh_threshold
+_get_sbh_threshold=msvcrt._get_sbh_threshold
 
-_getch
-_getche
-_getcwd
-_getdcwd
-_getdiskfree
-_getdllprocaddr
-_getdrive
-_getdrives
-_getmaxstdio
-_getmbcp
-_getpid
-_getsystime
-_getw
-_getwch
-_getwche
-_getws
-_global_unwind2
-_gmtime32 == gmtime
+_getch=msvcrt._getch
+_getche=msvcrt._getche
+_getcwd=msvcrt._getcwd
+_getdcwd=msvcrt._getdcwd
+_getdiskfree=msvcrt._getdiskfree
+_getdllprocaddr=msvcrt._getdllprocaddr
+_getdrive=msvcrt._getdrive
+_getdrives=msvcrt._getdrives
+_getmaxstdio=msvcrt._getmaxstdio
+_getmbcp=msvcrt._getmbcp
+_getpid=msvcrt._getpid
+_getsystime=msvcrt._getsystime
+_getw=msvcrt._getw
+_getwch=msvcrt._getwch
+_getwche=msvcrt._getwche
+_getws=msvcrt._getws
+_global_unwind2=msvcrt._global_unwind2
+_gmtime32=msvcrt.gmtime
 ; _gmtime32_s replaced by emu
-_gmtime64
+_gmtime64=msvcrt._gmtime64
 ; _gmtime64_s replaced by emu
-_heapadd
-_heapchk
-_heapmin
-_heapset
-_heapused
-_heapwalk
-_hypot
+_heapadd=msvcrt._heapadd
+_heapchk=msvcrt._heapchk
+_heapmin=msvcrt._heapmin
+_heapset=msvcrt._heapset
+_heapused=msvcrt._heapused
+_heapwalk=msvcrt._heapwalk
+_hypot=msvcrt._hypot
 
-_i64toa
-_i64toa_s
-_i64tow
-_i64tow_s
-_initterm
+_i64toa=msvcrt._i64toa
+_i64toa_s=msvcrt._i64toa_s
+_i64tow=msvcrt._i64tow
+_i64tow_s=msvcrt._i64tow_s
+_initterm=msvcrt._initterm
 
-_inp
-_inpd
-_inpw
+_inp=msvcrt._inp
+_inpd=msvcrt._inpd
+_inpw=msvcrt._inpw
 
-_iob DATA
-_isalnum_l
-_isalpha_l
-_isatty
-_iscntrl_l
-_isctype
-_isctype_l
-_isdigit_l
-_isgraph_l
-_isleadbyte_l
-_islower_l
-_ismbbalnum
-_ismbbalnum_l
-_ismbbalpha
-_ismbbalpha_l
-_ismbbgraph
-_ismbbgraph_l
-_ismbbkalnum
-_ismbbkalnum_l
-_ismbbkana
-_ismbbkana_l
-_ismbbkprint
-_ismbbkprint_l
-_ismbbkpunct
-_ismbbkpunct_l
-_ismbblead
-_ismbblead_l
-_ismbbprint
-_ismbbprint_l
-_ismbbpunct
-_ismbbpunct_l
-_ismbbtrail
-_ismbbtrail_l
-_ismbcalnum
-_ismbcalnum_l
-_ismbcalpha
-_ismbcalpha_l
-_ismbcdigit
-_ismbcdigit_l
-_ismbcgraph
-_ismbcgraph_l
-_ismbchira
-_ismbchira_l
-_ismbckata
-_ismbckata_l
-_ismbcl0
-_ismbcl0_l
-_ismbcl1
-_ismbcl1_l
-_ismbcl2
-_ismbcl2_l
-_ismbclegal
-_ismbclegal_l
-_ismbclower
-_ismbclower_l
-_ismbcprint
-_ismbcprint_l
-_ismbcpunct
-_ismbcpunct_l
-_ismbcspace
-_ismbcspace_l
-_ismbcsymbol
-_ismbcsymbol_l
-_ismbcupper
-_ismbcupper_l
-_ismbslead
-_ismbslead_l
-_ismbstrail
-_ismbstrail_l
-_isnan
+_iob=msvcrt._iob DATA
+_isalnum_l=msvcrt._isalnum_l
+_isalpha_l=msvcrt._isalpha_l
+_isatty=msvcrt._isatty
+_iscntrl_l=msvcrt._iscntrl_l
+_isctype=msvcrt._isctype
+_isctype_l=msvcrt._isctype_l
+_isdigit_l=msvcrt._isdigit_l
+_isgraph_l=msvcrt._isgraph_l
+_isleadbyte_l=msvcrt._isleadbyte_l
+_islower_l=msvcrt._islower_l
+_ismbbalnum=msvcrt._ismbbalnum
+_ismbbalnum_l=msvcrt._ismbbalnum_l
+_ismbbalpha=msvcrt._ismbbalpha
+_ismbbalpha_l=msvcrt._ismbbalpha_l
+_ismbbgraph=msvcrt._ismbbgraph
+_ismbbgraph_l=msvcrt._ismbbgraph_l
+_ismbbkalnum=msvcrt._ismbbkalnum
+_ismbbkalnum_l=msvcrt._ismbbkalnum_l
+_ismbbkana=msvcrt._ismbbkana
+_ismbbkana_l=msvcrt._ismbbkana_l
+_ismbbkprint=msvcrt._ismbbkprint
+_ismbbkprint_l=msvcrt._ismbbkprint_l
+_ismbbkpunct=msvcrt._ismbbkpunct
+_ismbbkpunct_l=msvcrt._ismbbkpunct_l
+_ismbblead=msvcrt._ismbblead
+_ismbblead_l=msvcrt._ismbblead_l
+_ismbbprint=msvcrt._ismbbprint
+_ismbbprint_l=msvcrt._ismbbprint_l
+_ismbbpunct=msvcrt._ismbbpunct
+_ismbbpunct_l=msvcrt._ismbbpunct_l
+_ismbbtrail=msvcrt._ismbbtrail
+_ismbbtrail_l=msvcrt._ismbbtrail_l
+_ismbcalnum=msvcrt._ismbcalnum
+_ismbcalnum_l=msvcrt._ismbcalnum_l
+_ismbcalpha=msvcrt._ismbcalpha
+_ismbcalpha_l=msvcrt._ismbcalpha_l
+_ismbcdigit=msvcrt._ismbcdigit
+_ismbcdigit_l=msvcrt._ismbcdigit_l
+_ismbcgraph=msvcrt._ismbcgraph
+_ismbcgraph_l=msvcrt._ismbcgraph_l
+_ismbchira=msvcrt._ismbchira
+_ismbchira_l=msvcrt._ismbchira_l
+_ismbckata=msvcrt._ismbckata
+_ismbckata_l=msvcrt._ismbckata_l
+_ismbcl0=msvcrt._ismbcl0
+_ismbcl0_l=msvcrt._ismbcl0_l
+_ismbcl1=msvcrt._ismbcl1
+_ismbcl1_l=msvcrt._ismbcl1_l
+_ismbcl2=msvcrt._ismbcl2
+_ismbcl2_l=msvcrt._ismbcl2_l
+_ismbclegal=msvcrt._ismbclegal
+_ismbclegal_l=msvcrt._ismbclegal_l
+_ismbclower=msvcrt._ismbclower
+_ismbclower_l=msvcrt._ismbclower_l
+_ismbcprint=msvcrt._ismbcprint
+_ismbcprint_l=msvcrt._ismbcprint_l
+_ismbcpunct=msvcrt._ismbcpunct
+_ismbcpunct_l=msvcrt._ismbcpunct_l
+_ismbcspace=msvcrt._ismbcspace
+_ismbcspace_l=msvcrt._ismbcspace_l
+_ismbcsymbol=msvcrt._ismbcsymbol
+_ismbcsymbol_l=msvcrt._ismbcsymbol_l
+_ismbcupper=msvcrt._ismbcupper
+_ismbcupper_l=msvcrt._ismbcupper_l
+_ismbslead=msvcrt._ismbslead
+_ismbslead_l=msvcrt._ismbslead_l
+_ismbstrail=msvcrt._ismbstrail
+_ismbstrail_l=msvcrt._ismbstrail_l
+_isnan=msvcrt._isnan
 
-_isprint_l
-_isspace_l
-_isupper_l
-_iswalnum_l
-_iswalpha_l
-_iswcntrl_l
-_iswctype_l
-_iswdigit_l
-_iswgraph_l
-_iswlower_l
-_iswprint_l
-_iswpunct_l
-_iswspace_l
-_iswupper_l
-_iswxdigit_l
-_isxdigit_l
-_itoa
-_itoa_s
-_itow
-_itow_s
-_j0
-_j1
-_jn
-_kbhit
-_lfind
-_loaddll
+_isprint_l=msvcrt._isprint_l
+_isspace_l=msvcrt._isspace_l
+_isupper_l=msvcrt._isupper_l
+_iswalnum_l=msvcrt._iswalnum_l
+_iswalpha_l=msvcrt._iswalpha_l
+_iswcntrl_l=msvcrt._iswcntrl_l
+_iswctype_l=msvcrt._iswctype_l
+_iswdigit_l=msvcrt._iswdigit_l
+_iswgraph_l=msvcrt._iswgraph_l
+_iswlower_l=msvcrt._iswlower_l
+_iswprint_l=msvcrt._iswprint_l
+_iswpunct_l=msvcrt._iswpunct_l
+_iswspace_l=msvcrt._iswspace_l
+_iswupper_l=msvcrt._iswupper_l
+_iswxdigit_l=msvcrt._iswxdigit_l
+_isxdigit_l=msvcrt._isxdigit_l
+_itoa=msvcrt._itoa
+_itoa_s=msvcrt._itoa_s
+_itow=msvcrt._itow
+_itow_s=msvcrt._itow_s
+_j0=msvcrt._j0
+_j1=msvcrt._j1
+_jn=msvcrt._jn
+_kbhit=msvcrt._kbhit
+_lfind=msvcrt._lfind
+_loaddll=msvcrt._loaddll
 
 
-_local_unwind2
-_localtime32 == localtime
+_local_unwind2=msvcrt._local_unwind2
+_localtime32=msvcrt.localtime
 ; _localtime32_s replaced by emu
-_localtime64
+_localtime64=msvcrt._localtime64
 ; _localtime64_s replaced by emu
-_lock
-_locking
-_logb
+_lock=msvcrt._lock
+_locking=msvcrt._locking
+_logb=msvcrt._logb
 
-_longjmpex
-_lrotl
-_lrotr
-_lsearch
+_longjmpex=msvcrt._longjmpex
+_lrotl=msvcrt._lrotl
+_lrotr=msvcrt._lrotr
+_lsearch=msvcrt._lsearch
 
-_lseek
-_lseeki64
-_ltoa
+_lseek=msvcrt._lseek
+_lseeki64=msvcrt._lseeki64
+_ltoa=msvcrt._ltoa
 
-_ltow
+_ltow=msvcrt._ltow
 
-_makepath
-_makepath_s
+_makepath=msvcrt._makepath
+_makepath_s=msvcrt._makepath_s
 
-_mbbtombc
-_mbbtombc_l
-_mbbtype
-_mbcasemap
-_mbccpy
-_mbccpy_l
-_mbccpy_s
-_mbccpy_s_l
-_mbcjistojms
-_mbcjistojms_l
-_mbcjmstojis
-_mbcjmstojis_l
-_mbclen
-_mbclen_l
-_mbctohira
-_mbctohira_l
-_mbctokata
-_mbctokata_l
-_mbctolower
-_mbctolower_l
-_mbctombb
-_mbctombb_l
-_mbctoupper
-_mbctoupper_l
-_mbctype DATA
-_mblen_l
-_mbsbtype
-_mbsbtype_l
-_mbscat
-_mbscat_s
-_mbscat_s_l
-_mbschr
-_mbschr_l
-_mbscmp
-_mbscmp_l
-_mbscoll
-_mbscoll_l
-_mbscpy
-_mbscpy_s
-_mbscpy_s_l
-_mbscspn
-_mbscspn_l
-_mbsdec
-_mbsdec_l
-_mbsdup
-_mbsicmp
-_mbsicmp_l
-_mbsicoll
-_mbsicoll_l
-_mbsinc
-_mbsinc_l
-_mbslen
-_mbslen_l
-_mbslwr
-_mbslwr_l
-_mbslwr_s
-_mbslwr_s_l
-_mbsnbcat
-_mbsnbcat_l
-_mbsnbcat_s
-_mbsnbcat_s_l
-_mbsnbcmp
-_mbsnbcmp_l
-_mbsnbcnt
-_mbsnbcnt_l
-_mbsnbcoll
-_mbsnbcoll_l
-_mbsnbcpy
-_mbsnbcpy_l
-_mbsnbcpy_s
-_mbsnbcpy_s_l
-_mbsnbicmp
-_mbsnbicmp_l
-_mbsnbicoll
-_mbsnbicoll_l
-_mbsnbset
-_mbsnbset_l
-_mbsnbset_s
-_mbsnbset_s_l
-_mbsncat
-_mbsncat_l
-_mbsncat_s
-_mbsncat_s_l
-_mbsnccnt
-_mbsnccnt_l
-_mbsncmp
-_mbsncmp_l
-_mbsncoll
-_mbsncoll_l
-_mbsncpy
-_mbsncpy_l
-_mbsncpy_s
-_mbsncpy_s_l
-_mbsnextc
-_mbsnextc_l
-_mbsnicmp
-_mbsnicmp_l
-_mbsnicoll
-_mbsnicoll_l
-_mbsninc
-_mbsninc_l
-_mbsnlen
-_mbsnlen_l
-_mbsnset
-_mbsnset_l
-_mbsnset_s
-_mbsnset_s_l
-_mbspbrk
-_mbspbrk_l
-_mbsrchr
-_mbsrchr_l
-_mbsrev
-_mbsrev_l
-_mbsset
-_mbsset_l
-_mbsset_s
-_mbsset_s_l
-_mbsspn
-_mbsspn_l
-_mbsspnp
-_mbsspnp_l
-_mbsstr
-_mbsstr_l
-_mbstok
-_mbstok_l
-_mbstok_s
-_mbstok_s_l
-_mbstowcs_l
-_mbstowcs_s_l
-_mbstrlen
-_mbstrlen_l
-_mbstrnlen
-_mbstrnlen_l
-_mbsupr
-_mbsupr_l
-_mbsupr_s
-_mbsupr_s_l
-_mbtowc_l
-_memccpy
+_mbbtombc=msvcrt._mbbtombc
+_mbbtombc_l=msvcrt._mbbtombc_l
+_mbbtype=msvcrt._mbbtype
+_mbcasemap=msvcrt._mbcasemap
+_mbccpy=msvcrt._mbccpy
+_mbccpy_l=msvcrt._mbccpy_l
+_mbccpy_s=msvcrt._mbccpy_s
+_mbccpy_s_l=msvcrt._mbccpy_s_l
+_mbcjistojms=msvcrt._mbcjistojms
+_mbcjistojms_l=msvcrt._mbcjistojms_l
+_mbcjmstojis=msvcrt._mbcjmstojis
+_mbcjmstojis_l=msvcrt._mbcjmstojis_l
+_mbclen=msvcrt._mbclen
+_mbclen_l=msvcrt._mbclen_l
+_mbctohira=msvcrt._mbctohira
+_mbctohira_l=msvcrt._mbctohira_l
+_mbctokata=msvcrt._mbctokata
+_mbctokata_l=msvcrt._mbctokata_l
+_mbctolower=msvcrt._mbctolower
+_mbctolower_l=msvcrt._mbctolower_l
+_mbctombb=msvcrt._mbctombb
+_mbctombb_l=msvcrt._mbctombb_l
+_mbctoupper=msvcrt._mbctoupper
+_mbctoupper_l=msvcrt._mbctoupper_l
+_mbctype=msvcrt._mbctype DATA
+_mblen_l=msvcrt._mblen_l
+_mbsbtype=msvcrt._mbsbtype
+_mbsbtype_l=msvcrt._mbsbtype_l
+_mbscat=msvcrt._mbscat
+_mbscat_s=msvcrt._mbscat_s
+_mbscat_s_l=msvcrt._mbscat_s_l
+_mbschr=msvcrt._mbschr
+_mbschr_l=msvcrt._mbschr_l
+_mbscmp=msvcrt._mbscmp
+_mbscmp_l=msvcrt._mbscmp_l
+_mbscoll=msvcrt._mbscoll
+_mbscoll_l=msvcrt._mbscoll_l
+_mbscpy=msvcrt._mbscpy
+_mbscpy_s=msvcrt._mbscpy_s
+_mbscpy_s_l=msvcrt._mbscpy_s_l
+_mbscspn=msvcrt._mbscspn
+_mbscspn_l=msvcrt._mbscspn_l
+_mbsdec=msvcrt._mbsdec
+_mbsdec_l=msvcrt._mbsdec_l
+_mbsdup=msvcrt._mbsdup
+_mbsicmp=msvcrt._mbsicmp
+_mbsicmp_l=msvcrt._mbsicmp_l
+_mbsicoll=msvcrt._mbsicoll
+_mbsicoll_l=msvcrt._mbsicoll_l
+_mbsinc=msvcrt._mbsinc
+_mbsinc_l=msvcrt._mbsinc_l
+_mbslen=msvcrt._mbslen
+_mbslen_l=msvcrt._mbslen_l
+_mbslwr=msvcrt._mbslwr
+_mbslwr_l=msvcrt._mbslwr_l
+_mbslwr_s=msvcrt._mbslwr_s
+_mbslwr_s_l=msvcrt._mbslwr_s_l
+_mbsnbcat=msvcrt._mbsnbcat
+_mbsnbcat_l=msvcrt._mbsnbcat_l
+_mbsnbcat_s=msvcrt._mbsnbcat_s
+_mbsnbcat_s_l=msvcrt._mbsnbcat_s_l
+_mbsnbcmp=msvcrt._mbsnbcmp
+_mbsnbcmp_l=msvcrt._mbsnbcmp_l
+_mbsnbcnt=msvcrt._mbsnbcnt
+_mbsnbcnt_l=msvcrt._mbsnbcnt_l
+_mbsnbcoll=msvcrt._mbsnbcoll
+_mbsnbcoll_l=msvcrt._mbsnbcoll_l
+_mbsnbcpy=msvcrt._mbsnbcpy
+_mbsnbcpy_l=msvcrt._mbsnbcpy_l
+_mbsnbcpy_s=msvcrt._mbsnbcpy_s
+_mbsnbcpy_s_l=msvcrt._mbsnbcpy_s_l
+_mbsnbicmp=msvcrt._mbsnbicmp
+_mbsnbicmp_l=msvcrt._mbsnbicmp_l
+_mbsnbicoll=msvcrt._mbsnbicoll
+_mbsnbicoll_l=msvcrt._mbsnbicoll_l
+_mbsnbset=msvcrt._mbsnbset
+_mbsnbset_l=msvcrt._mbsnbset_l
+_mbsnbset_s=msvcrt._mbsnbset_s
+_mbsnbset_s_l=msvcrt._mbsnbset_s_l
+_mbsncat=msvcrt._mbsncat
+_mbsncat_l=msvcrt._mbsncat_l
+_mbsncat_s=msvcrt._mbsncat_s
+_mbsncat_s_l=msvcrt._mbsncat_s_l
+_mbsnccnt=msvcrt._mbsnccnt
+_mbsnccnt_l=msvcrt._mbsnccnt_l
+_mbsncmp=msvcrt._mbsncmp
+_mbsncmp_l=msvcrt._mbsncmp_l
+_mbsncoll=msvcrt._mbsncoll
+_mbsncoll_l=msvcrt._mbsncoll_l
+_mbsncpy=msvcrt._mbsncpy
+_mbsncpy_l=msvcrt._mbsncpy_l
+_mbsncpy_s=msvcrt._mbsncpy_s
+_mbsncpy_s_l=msvcrt._mbsncpy_s_l
+_mbsnextc=msvcrt._mbsnextc
+_mbsnextc_l=msvcrt._mbsnextc_l
+_mbsnicmp=msvcrt._mbsnicmp
+_mbsnicmp_l=msvcrt._mbsnicmp_l
+_mbsnicoll=msvcrt._mbsnicoll
+_mbsnicoll_l=msvcrt._mbsnicoll_l
+_mbsninc=msvcrt._mbsninc
+_mbsninc_l=msvcrt._mbsninc_l
+_mbsnlen=msvcrt._mbsnlen
+_mbsnlen_l=msvcrt._mbsnlen_l
+_mbsnset=msvcrt._mbsnset
+_mbsnset_l=msvcrt._mbsnset_l
+_mbsnset_s=msvcrt._mbsnset_s
+_mbsnset_s_l=msvcrt._mbsnset_s_l
+_mbspbrk=msvcrt._mbspbrk
+_mbspbrk_l=msvcrt._mbspbrk_l
+_mbsrchr=msvcrt._mbsrchr
+_mbsrchr_l=msvcrt._mbsrchr_l
+_mbsrev=msvcrt._mbsrev
+_mbsrev_l=msvcrt._mbsrev_l
+_mbsset=msvcrt._mbsset
+_mbsset_l=msvcrt._mbsset_l
+_mbsset_s=msvcrt._mbsset_s
+_mbsset_s_l=msvcrt._mbsset_s_l
+_mbsspn=msvcrt._mbsspn
+_mbsspn_l=msvcrt._mbsspn_l
+_mbsspnp=msvcrt._mbsspnp
+_mbsspnp_l=msvcrt._mbsspnp_l
+_mbsstr=msvcrt._mbsstr
+_mbsstr_l=msvcrt._mbsstr_l
+_mbstok=msvcrt._mbstok
+_mbstok_l=msvcrt._mbstok_l
+_mbstok_s=msvcrt._mbstok_s
+_mbstok_s_l=msvcrt._mbstok_s_l
+_mbstowcs_l=msvcrt._mbstowcs_l
+_mbstowcs_s_l=msvcrt._mbstowcs_s_l
+_mbstrlen=msvcrt._mbstrlen
+_mbstrlen_l=msvcrt._mbstrlen_l
+_mbstrnlen=msvcrt._mbstrnlen
+_mbstrnlen_l=msvcrt._mbstrnlen_l
+_mbsupr=msvcrt._mbsupr
+_mbsupr_l=msvcrt._mbsupr_l
+_mbsupr_s=msvcrt._mbsupr_s
+_mbsupr_s_l=msvcrt._mbsupr_s_l
+_mbtowc_l=msvcrt._mbtowc_l
+_memccpy=msvcrt._memccpy
 
-_memicmp
-_memicmp_l
-_mkdir
-_mkgmtime
-_mkgmtime32
+_memicmp=msvcrt._memicmp
+_memicmp_l=msvcrt._memicmp_l
+_mkdir=msvcrt._mkdir
+_mkgmtime=msvcrt._mkgmtime
+_mkgmtime32=msvcrt._mkgmtime32
 
 
-_mktemp
+_mktemp=msvcrt._mktemp
 ; _mktemp_s replaced by emu
-_mktime32 == mktime
+_mktime32=msvcrt.mktime
 
-_mktime64
-_msize
+_mktime64=msvcrt._mktime64
+_msize=msvcrt._msize
 
-_nextafter
+_nextafter=msvcrt._nextafter
 
-_onexit
-_open_osfhandle
-_osplatform DATA
-_osver DATA
-_outp
-_outpd
-_outpw
-_pclose
-_pctype DATA
-_pgmptr DATA
-_pipe
-_popen
-_printf_l
-_printf_p
-_printf_p_l
-_printf_s_l
-_purecall
-_putch
-_putenv
-_putenv_s
-_putw
-_putwch
-_putws
-_pwctype DATA
-_read
+_onexit=msvcrt._onexit
+_open_osfhandle=msvcrt._open_osfhandle
+_osplatform=msvcrt._osplatform DATA
+_osver=msvcrt._osver DATA
+_outp=msvcrt._outp
+_outpd=msvcrt._outpd
+_outpw=msvcrt._outpw
+_pclose=msvcrt._pclose
+_pctype=msvcrt._pctype DATA
+_pgmptr=msvcrt._pgmptr DATA
+_pipe=msvcrt._pipe
+_popen=msvcrt._popen
+_printf_l=msvcrt._printf_l
+_printf_p=msvcrt._printf_p
+_printf_p_l=msvcrt._printf_p_l
+_printf_s_l=msvcrt._printf_s_l
+_purecall=msvcrt._purecall
+_putch=msvcrt._putch
+_putenv=msvcrt._putenv
+_putenv_s=msvcrt._putenv_s
+_putw=msvcrt._putw
+_putwch=msvcrt._putwch
+_putws=msvcrt._putws
+_pwctype=msvcrt._pwctype DATA
+_read=msvcrt._read
 
-_resetstkoflw
-_rmdir
-_rmtmp
-_rotl
+_resetstkoflw=msvcrt._resetstkoflw
+_rmdir=msvcrt._rmdir
+_rmtmp=msvcrt._rmtmp
+_rotl=msvcrt._rotl
 
-_rotr
+_rotr=msvcrt._rotr
 
-_safe_fdiv
-_safe_fdivr
-_safe_fprem
-_safe_fprem1
-_scalb
+_safe_fdiv=msvcrt._safe_fdiv
+_safe_fdivr=msvcrt._safe_fdivr
+_safe_fprem=msvcrt._safe_fprem
+_safe_fprem1=msvcrt._safe_fprem1
+_scalb=msvcrt._scalb
 
-_scanf_l
-_scanf_s_l
-_scprintf
-_scprintf_l
-_scprintf_p_l
-_scwprintf
-_scwprintf_l
-_scwprintf_p_l
-_searchenv
-_searchenv_s
-_seh_longjmp_unwind
+_scanf_l=msvcrt._scanf_l
+_scanf_s_l=msvcrt._scanf_s_l
+_scprintf=msvcrt._scprintf
+_scprintf_l=msvcrt._scprintf_l
+_scprintf_p_l=msvcrt._scprintf_p_l
+_scwprintf=msvcrt._scwprintf
+_scwprintf_l=msvcrt._scwprintf_l
+_scwprintf_p_l=msvcrt._scwprintf_p_l
+_searchenv=msvcrt._searchenv
+_searchenv_s=msvcrt._searchenv_s
+_seh_longjmp_unwind=msvcrt._seh_longjmp_unwind
 
 
 
-_set_error_mode
+_set_error_mode=msvcrt._set_error_mode
 
 
 ; Does not seem to present even on Win7 msvcrt
 ;_set_purecall_handler
-_set_sbh_threshold
+_set_sbh_threshold=msvcrt._set_sbh_threshold
 ; _set_output_format provided by emu
-_set_SSE2_enable
-_set_security_error_handler
-_seterrormode
-_setjmp
-_setjmp3
+_set_SSE2_enable=msvcrt._set_SSE2_enable
+_set_security_error_handler=msvcrt._set_security_error_handler
+_seterrormode=msvcrt._seterrormode
+_setjmp=msvcrt._setjmp
+_setjmp3=msvcrt._setjmp3
 
-_setmaxstdio
-_setmbcp
-_setmode
-_setsystime
-_sleep
-_snprintf
-_snprintf_c
-_snprintf_c_l
-_snprintf_l
-_snprintf_s
-_snprintf_s_l
-_snscanf
-_snscanf_l
-_snscanf_s
-_snscanf_s_l
-_snwprintf
-snwprintf == _snwprintf
-_snwprintf_l
-_snwprintf_s
-_snwprintf_s_l
-_snwscanf
-_snwscanf_l
-_snwscanf_s
-_snwscanf_s_l
+_setmaxstdio=msvcrt._setmaxstdio
+_setmbcp=msvcrt._setmbcp
+_setmode=msvcrt._setmode
+_setsystime=msvcrt._setsystime
+_sleep=msvcrt._sleep
+_snprintf=msvcrt._snprintf
+_snprintf_c=msvcrt._snprintf_c
+_snprintf_c_l=msvcrt._snprintf_c_l
+_snprintf_l=msvcrt._snprintf_l
+_snprintf_s=msvcrt._snprintf_s
+_snprintf_s_l=msvcrt._snprintf_s_l
+_snscanf=msvcrt._snscanf
+_snscanf_l=msvcrt._snscanf_l
+_snscanf_s=msvcrt._snscanf_s
+_snscanf_s_l=msvcrt._snscanf_s_l
+_snwprintf=msvcrt._snwprintf
+snwprintf=msvcrt._snwprintf
+_snwprintf_l=msvcrt._snwprintf_l
+_snwprintf_s=msvcrt._snwprintf_s
+_snwprintf_s_l=msvcrt._snwprintf_s_l
+_snwscanf=msvcrt._snwscanf
+_snwscanf_l=msvcrt._snwscanf_l
+_snwscanf_s=msvcrt._snwscanf_s
+_snwscanf_s_l=msvcrt._snwscanf_s_l
 ; _sopen_s replaced by emu
-_spawnl
-_spawnle
-_spawnlp
-_spawnlpe
-_spawnv
-_spawnve
-_spawnvp
-_spawnvpe
-_splitpath
-_splitpath_s
-_sprintf_l
-_sprintf_p_l
-_sprintf_s_l
-_sscanf_l
-_sscanf_s_l
-_stat
-_stat64
-_stati64
-_stat32 == _stat
+_spawnl=msvcrt._spawnl
+_spawnle=msvcrt._spawnle
+_spawnlp=msvcrt._spawnlp
+_spawnlpe=msvcrt._spawnlpe
+_spawnv=msvcrt._spawnv
+_spawnve=msvcrt._spawnve
+_spawnvp=msvcrt._spawnvp
+_spawnvpe=msvcrt._spawnvpe
+_splitpath=msvcrt._splitpath
+_splitpath_s=msvcrt._splitpath_s
+_sprintf_l=msvcrt._sprintf_l
+_sprintf_p_l=msvcrt._sprintf_p_l
+_sprintf_s_l=msvcrt._sprintf_s_l
+_sscanf_l=msvcrt._sscanf_l
+_sscanf_s_l=msvcrt._sscanf_s_l
+_stat=msvcrt._stat
+_stat64=msvcrt._stat64
+_stati64=msvcrt._stati64
+_stat32=msvcrt._stat
 
-_statusfp
-_strcmpi
-_strcoll_l
-_strdate
+_statusfp=msvcrt._statusfp
+_strcmpi=msvcrt._strcmpi
+_strcoll_l=msvcrt._strcoll_l
+_strdate=msvcrt._strdate
 ; _strdate_s replaced by emu
-_strdup
+_strdup=msvcrt._strdup
 
-_strerror
-_strerror_s
-_stricmp
-_stricmp_l
-_stricoll
-_stricoll_l
-_strlwr
-_strlwr_l
-_strlwr_s
-_strlwr_s_l
-_strncoll
-_strncoll_l
-_strnicmp
-_strnicmp_l
-_strnicoll
-_strnicoll_l
-_strnset
-_strnset_s
-_strrev
-_strset
-_strset_s
-_strtime
+_strerror=msvcrt._strerror
+_strerror_s=msvcrt._strerror_s
+_stricmp=msvcrt._stricmp
+_stricmp_l=msvcrt._stricmp_l
+_stricoll=msvcrt._stricoll
+_stricoll_l=msvcrt._stricoll_l
+_strlwr=msvcrt._strlwr
+_strlwr_l=msvcrt._strlwr_l
+_strlwr_s=msvcrt._strlwr_s
+_strlwr_s_l=msvcrt._strlwr_s_l
+_strncoll=msvcrt._strncoll
+_strncoll_l=msvcrt._strncoll_l
+_strnicmp=msvcrt._strnicmp
+_strnicmp_l=msvcrt._strnicmp_l
+_strnicoll=msvcrt._strnicoll
+_strnicoll_l=msvcrt._strnicoll_l
+_strnset=msvcrt._strnset
+_strnset_s=msvcrt._strnset_s
+_strrev=msvcrt._strrev
+_strset=msvcrt._strset
+_strset_s=msvcrt._strset_s
+_strtime=msvcrt._strtime
 ; _strtime_s replaced by emu
-_strtod_l
-_strtoi64
-_strtoi64_l
-_strtol_l
-_strtoui64
-_strtoui64_l
-_strtoul_l
-_strupr
-_strupr_l
-_strupr_s
-_strupr_s_l
-_strxfrm_l
-_swab
-_swprintf == swprintf
+_strtod_l=msvcrt._strtod_l
+_strtoi64=msvcrt._strtoi64
+_strtoi64_l=msvcrt._strtoi64_l
+_strtol_l=msvcrt._strtol_l
+_strtoui64=msvcrt._strtoui64
+_strtoui64_l=msvcrt._strtoui64_l
+_strtoul_l=msvcrt._strtoul_l
+_strupr=msvcrt._strupr
+_strupr_l=msvcrt._strupr_l
+_strupr_s=msvcrt._strupr_s
+_strupr_s_l=msvcrt._strupr_s_l
+_strxfrm_l=msvcrt._strxfrm_l
+_swab=msvcrt._swab
+_swprintf=msvcrt.swprintf
 
-_swprintf_c_l
-_swprintf_p_l
-_swprintf_s_l
-_swscanf_l
-_swscanf_s_l
-_sys_errlist DATA
-_sys_nerr DATA
-_tell
-_telli64
-_tempnam
+_swprintf_c_l=msvcrt._swprintf_c_l
+_swprintf_p_l=msvcrt._swprintf_p_l
+_swprintf_s_l=msvcrt._swprintf_s_l
+_swscanf_l=msvcrt._swscanf_l
+_swscanf_s_l=msvcrt._swscanf_s_l
+_sys_errlist=msvcrt._sys_errlist DATA
+_sys_nerr=msvcrt._sys_nerr DATA
+_tell=msvcrt._tell
+_telli64=msvcrt._telli64
+_tempnam=msvcrt._tempnam
 
-_time32 == time
+_time32=msvcrt.time
 
-_time64
-_tolower
-_tolower_l
-_toupper
-_toupper_l
-_towlower_l
-_towupper_l
-_tzset
-_ui64toa
-_ui64toa_s
-_ui64tow
-_ui64tow_s
-_ultoa
-_ultoa_s
-_ultow
-_ultow_s
-_umask
+_time64=msvcrt._time64
+_tolower=msvcrt._tolower
+_tolower_l=msvcrt._tolower_l
+_toupper=msvcrt._toupper
+_toupper_l=msvcrt._toupper_l
+_towlower_l=msvcrt._towlower_l
+_towupper_l=msvcrt._towupper_l
+_tzset=msvcrt._tzset
+_ui64toa=msvcrt._ui64toa
+_ui64toa_s=msvcrt._ui64toa_s
+_ui64tow=msvcrt._ui64tow
+_ui64tow_s=msvcrt._ui64tow_s
+_ultoa=msvcrt._ultoa
+_ultoa_s=msvcrt._ultoa_s
+_ultow=msvcrt._ultow
+_ultow_s=msvcrt._ultow_s
+_umask=msvcrt._umask
 ; _umask_s replaced by emu
-_ungetch
-_ungetwch
-_unlink
-_unloaddll
-_unlock
-_utime
+_ungetch=msvcrt._ungetch
+_ungetwch=msvcrt._ungetwch
+_unlink=msvcrt._unlink
+_unloaddll=msvcrt._unloaddll
+_unlock=msvcrt._unlock
+_utime=msvcrt._utime
 
-_utime64
-_vcprintf
-_vcprintf_l
-_vcprintf_p
-_vcprintf_p_l
+_utime64=msvcrt._utime64
+_vcprintf=msvcrt._vcprintf
+_vcprintf_l=msvcrt._vcprintf_l
+_vcprintf_p=msvcrt._vcprintf_p
+_vcprintf_p_l=msvcrt._vcprintf_p_l
 ; _vcprintf_s Replaced by emu
 ; _vcprintf_s_l Likewise.
-_vcwprintf
-_vcwprintf_l
-_vcwprintf_p
-_vcwprintf_p_l
+_vcwprintf=msvcrt._vcwprintf
+_vcwprintf_l=msvcrt._vcwprintf_l
+_vcwprintf_p=msvcrt._vcwprintf_p
+_vcwprintf_p_l=msvcrt._vcwprintf_p_l
 ; _vcwprintf_s Replaced by emu
 ; _vcwprintf_s_l Likewise.
-_vfprintf_l
-_vfprintf_p
-_vfprintf_p_l
-_vfprintf_s_l
-_vfwprintf_l
-_vfwprintf_p
-_vfwprintf_p_l
-_vfwprintf_s_l
-_vprintf_l
-_vprintf_p
-_vprintf_p_l
-_vprintf_s_l
-_vscprintf
-_vscprintf_l
-_vscprintf_p_l
-_vscwprintf
-_vscwprintf_l
-_vscwprintf_p_l
-_vsnprintf
-_vsnprintf_c
-_vsnprintf_c_l
-_vsnprintf_l
-_vsnprintf_s
-_vsnprintf_s_l
-_vsnwprintf
-vsnwprintf == _vsnwprintf
-_vsnwprintf_l
-_vsnwprintf_s
-_vsnwprintf_s_l
-_vsprintf_l
-_vsprintf_p
-_vsprintf_p_l
-_vsprintf_s_l
-_vswprintf == vswprintf
-_vswprintf_c
-_vswprintf_c_l
-_vswprintf_l
-_vswprintf_p_l
-_vswprintf_s_l
-_vwprintf_l
-_vwprintf_p
-_vwprintf_p_l
-_vwprintf_s_l
-_waccess
+_vfprintf_l=msvcrt._vfprintf_l
+_vfprintf_p=msvcrt._vfprintf_p
+_vfprintf_p_l=msvcrt._vfprintf_p_l
+_vfprintf_s_l=msvcrt._vfprintf_s_l
+_vfwprintf_l=msvcrt._vfwprintf_l
+_vfwprintf_p=msvcrt._vfwprintf_p
+_vfwprintf_p_l=msvcrt._vfwprintf_p_l
+_vfwprintf_s_l=msvcrt._vfwprintf_s_l
+_vprintf_l=msvcrt._vprintf_l
+_vprintf_p=msvcrt._vprintf_p
+_vprintf_p_l=msvcrt._vprintf_p_l
+_vprintf_s_l=msvcrt._vprintf_s_l
+_vscprintf=msvcrt._vscprintf
+_vscprintf_l=msvcrt._vscprintf_l
+_vscprintf_p_l=msvcrt._vscprintf_p_l
+_vscwprintf=msvcrt._vscwprintf
+_vscwprintf_l=msvcrt._vscwprintf_l
+_vscwprintf_p_l=msvcrt._vscwprintf_p_l
+_vsnprintf=msvcrt._vsnprintf
+_vsnprintf_c=msvcrt._vsnprintf_c
+_vsnprintf_c_l=msvcrt._vsnprintf_c_l
+_vsnprintf_l=msvcrt._vsnprintf_l
+_vsnprintf_s=msvcrt._vsnprintf_s
+_vsnprintf_s_l=msvcrt._vsnprintf_s_l
+_vsnwprintf=msvcrt._vsnwprintf
+vsnwprintf=msvcrt._vsnwprintf
+_vsnwprintf_l=msvcrt._vsnwprintf_l
+_vsnwprintf_s=msvcrt._vsnwprintf_s
+_vsnwprintf_s_l=msvcrt._vsnwprintf_s_l
+_vsprintf_l=msvcrt._vsprintf_l
+_vsprintf_p=msvcrt._vsprintf_p
+_vsprintf_p_l=msvcrt._vsprintf_p_l
+_vsprintf_s_l=msvcrt._vsprintf_s_l
+_vswprintf=msvcrt.vswprintf
+_vswprintf_c=msvcrt._vswprintf_c
+_vswprintf_c_l=msvcrt._vswprintf_c_l
+_vswprintf_l=msvcrt._vswprintf_l
+_vswprintf_p_l=msvcrt._vswprintf_p_l
+_vswprintf_s_l=msvcrt._vswprintf_s_l
+_vwprintf_l=msvcrt._vwprintf_l
+_vwprintf_p=msvcrt._vwprintf_p
+_vwprintf_p_l=msvcrt._vwprintf_p_l
+_vwprintf_s_l=msvcrt._vwprintf_s_l
+_waccess=msvcrt._waccess
 ; _waccess_s Replaced by emu
-_wasctime
+_wasctime=msvcrt._wasctime
 ; _wasctime_s Replaced by emu
 
-_wchdir
-_wchmod
-_wcmdln DATA
-_wcreat
-_wcscoll_l
-_wcsdup
+_wchdir=msvcrt._wchdir
+_wchmod=msvcrt._wchmod
+_wcmdln=msvcrt._wcmdln DATA
+_wcreat=msvcrt._wcreat
+_wcscoll_l=msvcrt._wcscoll_l
+_wcsdup=msvcrt._wcsdup
 
-_wcserror
-_wcserror_s
-_wcsftime_l
-_wcsicmp
-_wcsicmp_l
-_wcsicoll
-_wcsicoll_l
-_wcslwr
-_wcslwr_l
-_wcslwr_s
-_wcslwr_s_l
-_wcsncoll
-_wcsncoll_l
-_wcsnicmp
-_wcsnicmp_l
-_wcsnicoll
-_wcsnicoll_l
-_wcsnset
-_wcsnset_s
-_wcsrev
-_wcsset
-_wcsset_s
+_wcserror=msvcrt._wcserror
+_wcserror_s=msvcrt._wcserror_s
+_wcsftime_l=msvcrt._wcsftime_l
+_wcsicmp=msvcrt._wcsicmp
+_wcsicmp_l=msvcrt._wcsicmp_l
+_wcsicoll=msvcrt._wcsicoll
+_wcsicoll_l=msvcrt._wcsicoll_l
+_wcslwr=msvcrt._wcslwr
+_wcslwr_l=msvcrt._wcslwr_l
+_wcslwr_s=msvcrt._wcslwr_s
+_wcslwr_s_l=msvcrt._wcslwr_s_l
+_wcsncoll=msvcrt._wcsncoll
+_wcsncoll_l=msvcrt._wcsncoll_l
+_wcsnicmp=msvcrt._wcsnicmp
+_wcsnicmp_l=msvcrt._wcsnicmp_l
+_wcsnicoll=msvcrt._wcsnicoll
+_wcsnicoll_l=msvcrt._wcsnicoll_l
+_wcsnset=msvcrt._wcsnset
+_wcsnset_s=msvcrt._wcsnset_s
+_wcsrev=msvcrt._wcsrev
+_wcsset=msvcrt._wcsset
+_wcsset_s=msvcrt._wcsset_s
 
-_wcstoi64
-_wcstoi64_l
-_wcstol_l
-_wcstombs_l
-_wcstombs_s_l
-_wcstoui64
-_wcstoui64_l
-_wcstoul_l
-_wcsupr
-_wcsupr_l
-_wcsupr_s
-_wcsupr_s_l
-_wcsxfrm_l
-_wctime
-_wctime32 == _wctime
+_wcstoi64=msvcrt._wcstoi64
+_wcstoi64_l=msvcrt._wcstoi64_l
+_wcstol_l=msvcrt._wcstol_l
+_wcstombs_l=msvcrt._wcstombs_l
+_wcstombs_s_l=msvcrt._wcstombs_s_l
+_wcstoui64=msvcrt._wcstoui64
+_wcstoui64_l=msvcrt._wcstoui64_l
+_wcstoul_l=msvcrt._wcstoul_l
+_wcsupr=msvcrt._wcsupr
+_wcsupr_l=msvcrt._wcsupr_l
+_wcsupr_s=msvcrt._wcsupr_s
+_wcsupr_s_l=msvcrt._wcsupr_s_l
+_wcsxfrm_l=msvcrt._wcsxfrm_l
+_wctime=msvcrt._wctime
+_wctime32=msvcrt._wctime
 
 ; _wctime32_s replaced by emu
-_wctime64
+_wctime64=msvcrt._wctime64
 ; _wctime64_s replaced by emu
-_wctomb_l
-_wctomb_s_l
-_wctype
-_wenviron DATA
-_wexecl
-_wexecle
-_wexeclp
-_wexeclpe
-_wexecv
-_wexecve
-_wexecvp
-_wexecvpe
-_wfdopen
-_wfindfirst
-_wfindfirst32 == _wfindfirst
-_wfindfirst64
-_wfindfirsti64
-_wfindfirst32i64 == _wfindfirsti64
+_wctomb_l=msvcrt._wctomb_l
+_wctomb_s_l=msvcrt._wctomb_s_l
+_wctype=msvcrt._wctype
+_wenviron=msvcrt._wenviron DATA
+_wexecl=msvcrt._wexecl
+_wexecle=msvcrt._wexecle
+_wexeclp=msvcrt._wexeclp
+_wexeclpe=msvcrt._wexeclpe
+_wexecv=msvcrt._wexecv
+_wexecve=msvcrt._wexecve
+_wexecvp=msvcrt._wexecvp
+_wexecvpe=msvcrt._wexecvpe
+_wfdopen=msvcrt._wfdopen
+_wfindfirst=msvcrt._wfindfirst
+_wfindfirst32=msvcrt._wfindfirst
+_wfindfirst64=msvcrt._wfindfirst64
+_wfindfirsti64=msvcrt._wfindfirsti64
+_wfindfirst32i64=msvcrt._wfindfirsti64
 
-_wfindnext
-_wfindnext32 == _wfindnext
-_wfindnext64
-_wfindnexti64
-_wfindnext32i64 == _wfindnexti64
+_wfindnext=msvcrt._wfindnext
+_wfindnext32=msvcrt._wfindnext
+_wfindnext64=msvcrt._wfindnext64
+_wfindnexti64=msvcrt._wfindnexti64
+_wfindnext32i64=msvcrt._wfindnexti64
 
-_wfopen_s
-_wfreopen
-_wfreopen_s
-_wfullpath
+_wfopen_s=msvcrt._wfopen_s
+_wfreopen=msvcrt._wfreopen
+_wfreopen_s=msvcrt._wfreopen_s
+_wfullpath=msvcrt._wfullpath
 
-_wgetcwd
-_wgetdcwd
-_wgetenv
-_wgetenv_s
-_winmajor DATA
-_winminor DATA
-_winput_s
-_winver DATA
-_wmakepath
-_wmakepath_s
-_wmkdir
-_wmktemp
+_wgetcwd=msvcrt._wgetcwd
+_wgetdcwd=msvcrt._wgetdcwd
+_wgetenv=msvcrt._wgetenv
+_wgetenv_s=msvcrt._wgetenv_s
+_winmajor=msvcrt._winmajor DATA
+_winminor=msvcrt._winminor DATA
+_winput_s=msvcrt._winput_s
+_winver=msvcrt._winver DATA
+_wmakepath=msvcrt._wmakepath
+_wmakepath_s=msvcrt._wmakepath_s
+_wmkdir=msvcrt._wmkdir
+_wmktemp=msvcrt._wmktemp
 ; _wmktemp_s replaced by emu
-_woutput_s
-_wperror
-_wpgmptr DATA
-_wpopen
-_wprintf_l
-_wprintf_p
-_wprintf_p_l
-_wprintf_s_l
-_wputenv
-_wputenv_s
-_wremove
-_wrename
-_write
-_wrmdir
-_wscanf_l
-_wscanf_s_l
-_wsearchenv
-_wsearchenv_s
-_wsetlocale
-_wsopen_s
-_wspawnl
-_wspawnle
-_wspawnlp
-_wspawnlpe
-_wspawnv
-_wspawnve
-_wspawnvp
-_wspawnvpe
-_wsplitpath
-_wsplitpath_s
-_wstat
-_wstat64
-_wstati64
-_wstat32 == _wstat
+_woutput_s=msvcrt._woutput_s
+_wperror=msvcrt._wperror
+_wpgmptr=msvcrt._wpgmptr DATA
+_wpopen=msvcrt._wpopen
+_wprintf_l=msvcrt._wprintf_l
+_wprintf_p=msvcrt._wprintf_p
+_wprintf_p_l=msvcrt._wprintf_p_l
+_wprintf_s_l=msvcrt._wprintf_s_l
+_wputenv=msvcrt._wputenv
+_wputenv_s=msvcrt._wputenv_s
+_wremove=msvcrt._wremove
+_wrename=msvcrt._wrename
+_write=msvcrt._write
+_wrmdir=msvcrt._wrmdir
+_wscanf_l=msvcrt._wscanf_l
+_wscanf_s_l=msvcrt._wscanf_s_l
+_wsearchenv=msvcrt._wsearchenv
+_wsearchenv_s=msvcrt._wsearchenv_s
+_wsetlocale=msvcrt._wsetlocale
+_wsopen_s=msvcrt._wsopen_s
+_wspawnl=msvcrt._wspawnl
+_wspawnle=msvcrt._wspawnle
+_wspawnlp=msvcrt._wspawnlp
+_wspawnlpe=msvcrt._wspawnlpe
+_wspawnv=msvcrt._wspawnv
+_wspawnve=msvcrt._wspawnve
+_wspawnvp=msvcrt._wspawnvp
+_wspawnvpe=msvcrt._wspawnvpe
+_wsplitpath=msvcrt._wsplitpath
+_wsplitpath_s=msvcrt._wsplitpath_s
+_wstat=msvcrt._wstat
+_wstat64=msvcrt._wstat64
+_wstati64=msvcrt._wstati64
+_wstat32=msvcrt._wstat
 
-_wstrdate
+_wstrdate=msvcrt._wstrdate
 ; _wstrdate_s replaced by emu
-_wstrtime
+_wstrtime=msvcrt._wstrtime
 ; _wstrtime_s replaced by emu
-_wsystem
-_wtempnam
+_wsystem=msvcrt._wsystem
+_wtempnam=msvcrt._wtempnam
 
-_wtmpnam
-_wtmpnam_s
-_wtof
-_wtof_l
-_wtoi
-_wtoi64
-_wtoi64_l
-_wtoi_l
-_wtol
-_wtol_l
-_wunlink
-_wutime
+_wtmpnam=msvcrt._wtmpnam
+_wtmpnam_s=msvcrt._wtmpnam_s
+_wtof=msvcrt._wtof
+_wtof_l=msvcrt._wtof_l
+_wtoi=msvcrt._wtoi
+_wtoi64=msvcrt._wtoi64
+_wtoi64_l=msvcrt._wtoi64_l
+_wtoi_l=msvcrt._wtoi_l
+_wtol=msvcrt._wtol
+_wtol_l=msvcrt._wtol_l
+_wunlink=msvcrt._wunlink
+_wutime=msvcrt._wutime
 
-_wutime64
-_y0
-_y1
-_yn
-abort
-abs
-acos
+_wutime64=msvcrt._wutime64
+_y0=msvcrt._y0
+_y1=msvcrt._y1
+_yn=msvcrt._yn
+abort=msvcrt.abort
+abs=msvcrt.abs
+acos=msvcrt.acos
 
-asctime
+asctime=msvcrt.asctime
 ; asctime_s replaced by emu
-asin
+asin=msvcrt.asin
 
-atan
-atan2 DATA
+atan=msvcrt.atan
+atan2=msvcrt.atan2 DATA
 
 
-atexit DATA
-atof
-atoi
-atol
-bsearch
-bsearch_s
+atexit=msvcrt.atexit DATA
+atof=msvcrt.atof
+atoi=msvcrt.atoi
+atol=msvcrt.atol
+bsearch=msvcrt.bsearch
+bsearch_s=msvcrt.bsearch_s
 
-calloc
-ceil DATA
+calloc=msvcrt.calloc
+ceil=msvcrt.ceil DATA
 
-clearerr
-clearerr_s
-clock
-cos DATA
+clearerr=msvcrt.clearerr
+clearerr_s=msvcrt.clearerr_s
+clock=msvcrt.clock
+cos=msvcrt.cos DATA
 
-cosh
+cosh=msvcrt.cosh
 
-ctime
-difftime
-div
-exit
-exp DATA
+ctime=msvcrt.ctime
+difftime=msvcrt.difftime
+div=msvcrt.div
+exit=msvcrt.exit
+exp=msvcrt.exp DATA
 
-fabs DATA
+fabs=msvcrt.fabs DATA
 
-fclose
-feof
-ferror
-fflush
-fgetc
-fgetpos
-fgets
-fgetwc
-fgetws
-floor DATA
+fclose=msvcrt.fclose
+feof=msvcrt.feof
+ferror=msvcrt.ferror
+fflush=msvcrt.fflush
+fgetc=msvcrt.fgetc
+fgetpos=msvcrt.fgetpos
+fgets=msvcrt.fgets
+fgetwc=msvcrt.fgetwc
+fgetws=msvcrt.fgetws
+floor=msvcrt.floor DATA
 
-fmod DATA
+fmod=msvcrt.fmod DATA
 
-fopen_s
-fprintf
-fprintf_s
-fputc
-fputs
-fputwc
-fputws
-fread
-free
-freopen
-freopen_s
+fopen_s=msvcrt.fopen_s
+fprintf=msvcrt.fprintf
+fprintf_s=msvcrt.fprintf_s
+fputc=msvcrt.fputc
+fputs=msvcrt.fputs
+fputwc=msvcrt.fputwc
+fputws=msvcrt.fputws
+fread=msvcrt.fread
+free=msvcrt.free
+freopen=msvcrt.freopen
+freopen_s=msvcrt.freopen_s
 ; If we implement frexp, we can set it to DATA only.
-frexp
-fscanf
-fscanf_s
-fseek
-fsetpos
-ftell
-fwprintf
-__ms_fwprintf == fwprintf
-fwprintf_s
-fwrite
-fwscanf
-fwscanf_s
-getc
-getchar
-getenv
-getenv_s
-gets
-getwc
-getwchar
-gmtime
-is_wctype
-isalnum
-isalpha
-iscntrl
-isdigit
-isgraph
-isleadbyte
-islower
-isprint
-ispunct
-isspace
-isupper
-iswalnum
-iswalpha
-iswascii
-iswcntrl
-iswctype
-iswdigit
-iswgraph
-iswlower
-iswprint
-iswpunct
-iswspace
-iswupper
-iswxdigit
-isxdigit
-labs
-ldexp DATA
-ldiv
-localeconv
-localtime
-log DATA
-log10
+frexp=msvcrt.frexp
+fscanf=msvcrt.fscanf
+fscanf_s=msvcrt.fscanf_s
+fseek=msvcrt.fseek
+fsetpos=msvcrt.fsetpos
+ftell=msvcrt.ftell
+fwprintf=msvcrt.fwprintf
+__ms_fwprintf=msvcrt.fwprintf
+fwprintf_s=msvcrt.fwprintf_s
+fwrite=msvcrt.fwrite
+fwscanf=msvcrt.fwscanf
+fwscanf_s=msvcrt.fwscanf_s
+getc=msvcrt.getc
+getchar=msvcrt.getchar
+getenv=msvcrt.getenv
+getenv_s=msvcrt.getenv_s
+gets=msvcrt.gets
+getwc=msvcrt.getwc
+getwchar=msvcrt.getwchar
+gmtime=msvcrt.gmtime
+is_wctype=msvcrt.is_wctype
+isalnum=msvcrt.isalnum
+isalpha=msvcrt.isalpha
+iscntrl=msvcrt.iscntrl
+isdigit=msvcrt.isdigit
+isgraph=msvcrt.isgraph
+isleadbyte=msvcrt.isleadbyte
+islower=msvcrt.islower
+isprint=msvcrt.isprint
+ispunct=msvcrt.ispunct
+isspace=msvcrt.isspace
+isupper=msvcrt.isupper
+iswalnum=msvcrt.iswalnum
+iswalpha=msvcrt.iswalpha
+iswascii=msvcrt.iswascii
+iswcntrl=msvcrt.iswcntrl
+iswctype=msvcrt.iswctype
+iswdigit=msvcrt.iswdigit
+iswgraph=msvcrt.iswgraph
+iswlower=msvcrt.iswlower
+iswprint=msvcrt.iswprint
+iswpunct=msvcrt.iswpunct
+iswspace=msvcrt.iswspace
+iswupper=msvcrt.iswupper
+iswxdigit=msvcrt.iswxdigit
+isxdigit=msvcrt.isxdigit
+labs=msvcrt.labs
+ldexp=msvcrt.ldexp DATA
+ldiv=msvcrt.ldiv
+localeconv=msvcrt.localeconv
+localtime=msvcrt.localtime
+log=msvcrt.log DATA
+log10=msvcrt.log10
 
 
 
-malloc
-mblen
+malloc=msvcrt.malloc
+mblen=msvcrt.mblen
 
 
 
 
-mbsrtowcs_s
-mbstowcs
-mbstowcs_s
-mbtowc
-memchr
-memcmp
-memcpy
+mbsrtowcs_s=msvcrt.mbsrtowcs_s
+mbstowcs=msvcrt.mbstowcs
+mbstowcs_s=msvcrt.mbstowcs_s
+mbtowc=msvcrt.mbtowc
+memchr=msvcrt.memchr
+memcmp=msvcrt.memcmp
+memcpy=msvcrt.memcpy
 ; memcpy_s replaced by emu
-memmove
+memmove=msvcrt.memmove
 ; memmove_s replaced by emu
-memset
-mktime
-modf DATA
+memset=msvcrt.memset
+mktime=msvcrt.mktime
+modf=msvcrt.modf DATA
 
-perror
-pow DATA
+perror=msvcrt.perror
+pow=msvcrt.pow DATA
 
-printf
-printf_s
-putc
-putchar
-puts
-putwc
-putwchar
-qsort
-qsort_s
-raise
-rand
+printf=msvcrt.printf
+printf_s=msvcrt.printf_s
+putc=msvcrt.putc
+putchar=msvcrt.putchar
+puts=msvcrt.puts
+putwc=msvcrt.putwc
+putwchar=msvcrt.putwchar
+qsort=msvcrt.qsort
+qsort_s=msvcrt.qsort_s
+raise=msvcrt.raise
+rand=msvcrt.rand
 ; rand_s replaced by emu
-realloc
-remove
-rename
-rewind
-scanf
-scanf_s
-setbuf
+realloc=msvcrt.realloc
+remove=msvcrt.remove
+rename=msvcrt.rename
+rewind=msvcrt.rewind
+scanf=msvcrt.scanf
+scanf_s=msvcrt.scanf_s
+setbuf=msvcrt.setbuf
 
-setlocale
-setvbuf
-signal
-sin DATA
+setlocale=msvcrt.setlocale
+setvbuf=msvcrt.setvbuf
+signal=msvcrt.signal
+sin=msvcrt.sin DATA
 
 ; if we implement sinh, we can set it DATA only.
-sinh
+sinh=msvcrt.sinh
 
-sprintf
+sprintf=msvcrt.sprintf
 ; sprintf_s replaced by emu
-sqrt DATA
+sqrt=msvcrt.sqrt DATA
 
-srand
-sscanf
-sscanf_s
-strcat
-strcat_s
-strchr
-strcmp
-strcoll
-strcpy
-strcpy_s
-strcspn
-strerror
+srand=msvcrt.srand
+sscanf=msvcrt.sscanf
+sscanf_s=msvcrt.sscanf_s
+strcat=msvcrt.strcat
+strcat_s=msvcrt.strcat_s
+strchr=msvcrt.strchr
+strcmp=msvcrt.strcmp
+strcoll=msvcrt.strcoll
+strcpy=msvcrt.strcpy
+strcpy_s=msvcrt.strcpy_s
+strcspn=msvcrt.strcspn
+strerror=msvcrt.strerror
 ; strerror_s replaced by emu
-strftime
-strlen
-strncat
-strncat_s
-strncmp
-strncpy
-strncpy_s
+strftime=msvcrt.strftime
+strlen=msvcrt.strlen
+strncat=msvcrt.strncat
+strncat_s=msvcrt.strncat_s
+strncmp=msvcrt.strncmp
+strncpy=msvcrt.strncpy
+strncpy_s=msvcrt.strncpy_s
 ; strnlen replaced by emu
-strpbrk
-strrchr
-strspn
-strstr
-strtod
-strtok
-strtok_s
-strtol
-strtoul
-strxfrm
-swprintf
-swprintf_s
-swscanf
-swscanf_s
-system
-tan
+strpbrk=msvcrt.strpbrk
+strrchr=msvcrt.strrchr
+strspn=msvcrt.strspn
+strstr=msvcrt.strstr
+strtod=msvcrt.strtod
+strtok=msvcrt.strtok
+strtok_s=msvcrt.strtok_s
+strtol=msvcrt.strtol
+strtoul=msvcrt.strtoul
+strxfrm=msvcrt.strxfrm
+swprintf=msvcrt.swprintf
+swprintf_s=msvcrt.swprintf_s
+swscanf=msvcrt.swscanf
+swscanf_s=msvcrt.swscanf_s
+system=msvcrt.system
+tan=msvcrt.tan
 
 ; if we implement tanh, we can set it to DATA only.
-tanh
+tanh=msvcrt.tanh
 
-time
-tmpfile
-tmpfile_s
-tmpnam
-tmpnam_s
-tolower
-toupper
-towlower
-towupper
-ungetc
-ungetwc
+time=msvcrt.time
+tmpfile=msvcrt.tmpfile
+tmpfile_s=msvcrt.tmpfile_s
+tmpnam=msvcrt.tmpnam
+tmpnam_s=msvcrt.tmpnam_s
+tolower=msvcrt.tolower
+toupper=msvcrt.toupper
+towlower=msvcrt.towlower
+towupper=msvcrt.towupper
+ungetc=msvcrt.ungetc
+ungetwc=msvcrt.ungetwc
 
-vfprintf
-vfprintf_s
-vfwprintf
-vfwprintf_s
-vprintf
-vprintf_s
-vsnprintf == _vsnprintf
-snprintf == _snprintf
-vsprintf
+vfprintf=msvcrt.vfprintf
+vfprintf_s=msvcrt.vfprintf_s
+vfwprintf=msvcrt.vfwprintf
+vfwprintf_s=msvcrt.vfwprintf_s
+vprintf=msvcrt.vprintf
+vprintf_s=msvcrt.vprintf_s
+vsnprintf=msvcrt._vsnprintf
+snprintf=msvcrt._snprintf
+vsprintf=msvcrt.vsprintf
 ; vsprintf_s replaced by emu
-vswprintf
-vswprintf_s
-vwprintf
-vwprintf_s
+vswprintf=msvcrt.vswprintf
+vswprintf_s=msvcrt.vswprintf_s
+vwprintf=msvcrt.vwprintf
+vwprintf_s=msvcrt.vwprintf_s
 
-wcrtomb_s
-wcscat
-wcscat_s
-wcschr
-wcscmp
-wcscoll
-wcscpy
-wcscpy_s
-wcscspn
-wcsftime
-wcslen
-wcsncat
-wcsncat_s
-wcsncmp
-wcsncpy
-wcsncpy_s
+wcrtomb_s=msvcrt.wcrtomb_s
+wcscat=msvcrt.wcscat
+wcscat_s=msvcrt.wcscat_s
+wcschr=msvcrt.wcschr
+wcscmp=msvcrt.wcscmp
+wcscoll=msvcrt.wcscoll
+wcscpy=msvcrt.wcscpy
+wcscpy_s=msvcrt.wcscpy_s
+wcscspn=msvcrt.wcscspn
+wcsftime=msvcrt.wcsftime
+wcslen=msvcrt.wcslen
+wcsncat=msvcrt.wcsncat
+wcsncat_s=msvcrt.wcsncat_s
+wcsncmp=msvcrt.wcsncmp
+wcsncpy=msvcrt.wcsncpy
+wcsncpy_s=msvcrt.wcsncpy_s
 ; We provide replacement implementation in libmingwex
-wcsnlen DATA
-wcspbrk
-wcsrchr
+wcsnlen=msvcrt.wcsnlen DATA
+wcspbrk=msvcrt.wcspbrk
+wcsrchr=msvcrt.wcsrchr
 
-wcsrtombs_s
-wcsspn
-wcsstr
-wcstod
-wcstok
-wcstok_s
-wcstol
-wcstombs
-wcstombs_s
-wcstoul
-wcsxfrm
+wcsrtombs_s=msvcrt.wcsrtombs_s
+wcsspn=msvcrt.wcsspn
+wcsstr=msvcrt.wcsstr
+wcstod=msvcrt.wcstod
+wcstok=msvcrt.wcstok
+wcstok_s=msvcrt.wcstok_s
+wcstol=msvcrt.wcstol
+wcstombs=msvcrt.wcstombs
+wcstombs_s=msvcrt.wcstombs_s
+wcstoul=msvcrt.wcstoul
+wcsxfrm=msvcrt.wcsxfrm
 
-wctomb
-wctomb_s
-wprintf
-wprintf_s
-wscanf
-wscanf_s
+wctomb=msvcrt.wctomb
+wctomb_s=msvcrt.wctomb_s
+wprintf=msvcrt.wprintf
+wprintf_s=msvcrt.wprintf_s
+wscanf=msvcrt.wscanf
+wscanf_s=msvcrt.wscanf_s
 
 ; re-directed api calls
-_fsopen=___phyx__fsopen
-_open=___phyx__open
-_sopen=___phyx__sopen
-_wfopen=___phyx__wfopen
-_wfsopen=___phyx__wfsopen
-_wopen=___phyx__wopen
-_wsopen=___phyx__wsopen
-fopen=___phyx_fopen
+_fsopen=muxcrt.___phyx__fsopen
+_open=muxcrt.___phyx__open
+_sopen=muxcrt.___phyx__sopen
+_wfopen=muxcrt.___phyx__wfopen
+_wfsopen=muxcrt.___phyx__wfsopen
+_wopen=muxcrt.___phyx__wopen
+_wsopen=muxcrt.___phyx__wsopen
+fopen=muxcrt.___phyx_fopen
