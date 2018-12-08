@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 #if !defined(FS_NAMESPACE)
-#define FS_NAMESPACE hs
+#define FS_NAMESPACE phyx
 #endif
 
 /* Play some dirty tricks to get CPP to expand correctly.  */
@@ -26,6 +26,7 @@
 #if defined(_WIN32)
 #include <wchar.h>
 wchar_t* FS(create_device_name) (const wchar_t*);
+int FS(translate_mode) (const wchar_t*);
 int FS(swopen) (const wchar_t* filename, int oflag,
                 int shflag, int pmode);
 FILE *FS(fwopen) (const wchar_t* filename, const wchar_t* mode);

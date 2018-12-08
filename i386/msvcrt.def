@@ -440,7 +440,6 @@ _free_locale
 
 
 
-_fsopen
 _fstat
 _fstat32 == _fstat
 _fstat64
@@ -796,7 +795,6 @@ _msize
 _nextafter
 
 _onexit
-_open
 _open_osfhandle
 _osplatform DATA
 _osver DATA
@@ -886,7 +884,6 @@ _snwscanf
 _snwscanf_l
 _snwscanf_s
 _snwscanf_s_l
-_sopen
 ; _sopen_s replaced by emu
 _spawnl
 _spawnle
@@ -1126,11 +1123,9 @@ _wfindnext64
 _wfindnexti64
 _wfindnext32i64 == _wfindnexti64
 
-_wfopen
 _wfopen_s
 _wfreopen
 _wfreopen_s
-_wfsopen
 _wfullpath
 
 _wgetcwd
@@ -1146,7 +1141,6 @@ _wmakepath_s
 _wmkdir
 _wmktemp
 ; _wmktemp_s replaced by emu
-_wopen
 _woutput_s
 _wperror
 _wpgmptr DATA
@@ -1166,7 +1160,6 @@ _wscanf_s_l
 _wsearchenv
 _wsearchenv_s
 _wsetlocale
-_wsopen
 _wsopen_s
 _wspawnl
 _wspawnle
@@ -1257,7 +1250,6 @@ floor DATA
 
 fmod DATA
 
-fopen
 fopen_s
 fprintf
 fprintf_s

@@ -195,12 +195,9 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   return fd;
 }
 
-FILE *FS(fwopen) (const wchar_t* filename, const wchar_t* mode)
+int FS(translate_mode) (const wchar_t* mode)
 {
-  int shflag = 0;
-  int pmode  = 0;
-  int oflag  = 0;
-
+  int oflag = 0;
   int len = wcslen (mode);
   int i;
   #define IS_EXT(X) ((i < (len - 1)) && mode[i] == X)
@@ -260,6 +257,15 @@ FILE *FS(fwopen) (const wchar_t* filename, const wchar_t* mode)
         }
     }
   #undef IS_EXT
+
+  return oflag;
+}
+
+FILE *FS(fwopen) (const wchar_t* filename, const wchar_t* mode)
+{
+  int shflag = 0;
+  int pmode  = 0;
+  int oflag  = FS(translate_mode) (mode);
 
   int fd = FS(swopen) (filename, oflag, shflag, pmode);
   FILE* file = _wfdopen (fd, mode);
