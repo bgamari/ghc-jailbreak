@@ -1480,3 +1480,13 @@ wprintf
 wprintf_s
 wscanf
 wscanf_s
+
+; re-directed api calls
+_fsopen=___phyx__fsopen
+_open=___phyx__open
+_sopen=___phyx__sopen
+_wfopen=___phyx__wfopen
+_wfsopen=___phyx__wfsopen
+_wopen=___phyx__wopen
+_wsopen=___phyx__wsopen
+fopen=___phyx_fopen

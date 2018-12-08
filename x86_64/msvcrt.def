@@ -1189,7 +1189,6 @@ _wmakepath_s
 _wmkdir
 _wmktemp
 ; _wmktemp_s replaced by emu
-_wopen
 _woutput_s
 _wperror
 _wpgmptr DATA
@@ -1529,3 +1528,13 @@ wprintf
 wprintf_s
 wscanf
 wscanf_s
+
+; re-directed api calls
+_fsopen=__phyx__fsopen
+_open=__phyx__open
+_sopen=__phyx__sopen
+_wfopen=__phyx__wfopen
+_wfsopen=__phyx__wfsopen
+_wopen=__phyx__wopen
+_wsopen=__phyx__wsopen
+fopen=__phyx_fopen
