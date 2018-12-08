@@ -2,10 +2,6 @@
 #include <stdio.h>
 #include "fs.h"
 
-FILE *FS(fopen) (
-  const char *filename,
-  const char *mode
-);
 FILE *FS(_wfopen) (
   const wchar_t *filename,
   const wchar_t *mode

@@ -3,13 +3,6 @@
 #include "fs.h"
 #include "phxcrt.h"
 
-FILE *FS(fopen) (
-  const char *filename,
-  const char *mode)
-{
-  return FS(fopen) (filename, mode);
-}
-
 FILE *FS(_wfopen) (
   const wchar_t *filename,
   const wchar_t *mode)
