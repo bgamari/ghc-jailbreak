@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ??? doesn?t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>ghc-jailbreak</id>
+    <title>GHC</title>
+    <version>0.0.1</version>
+    <authors>Tamar Christina</authors>
+    <owners>Tamar Christina</owners>
+    <summary>GHC Jailbreak, unlock your Haskell compiler's hidden potential.</summary>
+    <description>
+
+    GHC Jailbreak is a tool not affiliated with GHC HQ which aims to improve the
+    Haskell tooling on Windows.  This package works by binary patching the mingw-w64
+    distribution that comes bundled with GHC.  It does not touch GHC itself and
+    this is only compatible with GHC 8.6 and newer.
+
+    Full use of this utility also requires cabal >= 2.2.+++++++++++++++++++++++++++++
+
+    Highlights:
+            • GCC and related tools will be able to handle paths longer than 255 characters
+
+    </description>
+    <projectUrl>https://www.haskell.org/ghc/</projectUrl>
+    <tags>ghc haskell</tags>
+    <copyright>Copyright 2017, The University Court of the University of Glasgow.</copyright>
+    <licenseUrl>https://www.haskell.org/ghc/license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
+    <iconUrl>http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2000px-Haskell-Logo.svg.png</iconUrl>
+    <dependencies>
+      <dependency id="cabal" version="2.4.0.0" />
+      <dependency id="ghc" version="8.6.2" />
+    </dependencies>
+    <releaseNotes>https://github.com/Mistuke/ghc-jailbreak/changelog.md</releaseNotes>
+    <docsUrl>https://github.com/Mistuke/ghc-jailbreak/readme.md</docsUrl>
+    <bugTrackerUrl>https://github.com/Mistuke/ghc-jailbreak/issues/</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/Mistuke/ghc-jailbreak/</projectSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

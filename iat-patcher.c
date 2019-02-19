@@ -9,7 +9,7 @@
 #include <wchar.h>
 #include <imagehlp.h>
 
-#define USE_BACKUPS 0
+#define USE_BACKUPS 1
 
 static void
 show_usage (void)
@@ -27,7 +27,7 @@ show_usage (void)
 }
 
 static bool
-rewrite_import_address_table (void* ptr);
+rewrite_import_address_table (void*, bool*);
 
 int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
 {
@@ -66,7 +66,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
 #if USE_BACKUPS
   wprintf (L"creating backup...\n");
   if (!CopyFileW (filepath, bak_filepath, false))
-    goto end;
+    goto fail;
 #endif
 
   HANDLE fHwnd
@@ -100,13 +100,20 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
       goto fail;
     }
 
-  if (!rewrite_import_address_table (ptr))
+  bool nothing_to_do = true;
+  if (!rewrite_import_address_table (ptr, &nothing_to_do))
     {
-      printf ("oops, something went wrong. bailing out...\n");
+      if (nothing_to_do)
+        printf ("terminating patching...\n");
+      else
+        printf ("Oops, something went wrong. Aborting...\n");
       UnmapViewOfFile (ptr);
       CloseHandle (fHwnd);
       CloseHandle (mHwnd);
-      goto fail;
+      if (nothing_to_do)
+        goto end;
+      else
+        goto fail;
     }
 
   printf ("calculating new checksum...\n");
@@ -153,8 +160,9 @@ end:
 }
 
 static bool
-rewrite_import_address_table (void* ptr)
+rewrite_import_address_table (void* ptr, bool *nothing_to_do)
 {
+  *nothing_to_do = false;
   PIMAGE_NT_HEADERS ntHeader = ImageNtHeader (ptr);
   IMAGE_FILE_HEADER imgHeader = ntHeader->FileHeader;
   if (imgHeader.Machine != IMAGE_FILE_MACHINE_I386
@@ -186,7 +194,8 @@ rewrite_import_address_table (void* ptr)
       if (name == NULL)
         {
           printf ("did not find C runtime, nothing to do.\n");
-          break;
+          *nothing_to_do = true;
+          return false;
         }
 
       if (strncmp ("msvcrt.dll", name, 10) == 0)

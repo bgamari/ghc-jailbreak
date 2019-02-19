@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS=-O0 -g -DUNICODE -D__USE_MINGW_ANSI_STDIO=1 -std=c99 -municode \
+CC:=gcc
+CFLAGS=-O2 -DUNICODE -D__USE_MINGW_ANSI_STDIO=1 -std=c99 -municode \
        -DWINVER=0x0601 -D_WIN32_WINNT=0x0601
 LDFLAGS=-ldbghelp -limagehlp
 

@@ -57,13 +57,33 @@ wchar_t* FS(create_device_name) (const wchar_t* filename) {
         result[i] = L'\\';
     }
 
+  /* We need to expand dos short paths as well.  */
+  DWORD nResult = GetLongPathNameW (result, NULL, 0) + 1;
+  if (nResult == 1)
+    {
+      DWORD err = GetLastError ();
+    if (err == ERROR_FILE_NOT_FOUND || err == ERROR_PATH_NOT_FOUND)
+       return result;
+    }
+
+  wchar_t* temp = _wcsdup (result);
+  result = malloc (nResult * sizeof (wchar_t));
+  if (GetLongPathNameW (temp, result, nResult) == 0)
+    {
+      result = memcpy (result, temp, wcslen (temp));
+      goto cleanup;
+    }
+
+  free (temp);
+
   /* Now resolve any . and .. in the path or subsequent API calls may fail since
      Win32 will no longer resolve them.  */
-  DWORD nResult = GetFullPathNameW (result, 0, NULL, NULL) + 1;
-  wchar_t *temp = _wcsdup (result);
+  nResult = GetFullPathNameW (result, 0, NULL, NULL) + 1;
+  temp = _wcsdup (result);
   result = malloc (nResult * sizeof (wchar_t));
   if (GetFullPathNameW (temp, nResult, result, NULL) == 0)
     {
+      result = memcpy (result, temp, wcslen (temp));
       goto cleanup;
     }
 
@@ -268,6 +288,9 @@ FILE *FS(fwopen) (const wchar_t* filename, const wchar_t* mode)
   int oflag  = FS(translate_mode) (mode);
 
   int fd = FS(swopen) (filename, oflag, shflag, pmode);
+  if (fd < 0)
+    return NULL;
+
   FILE* file = _wfdopen (fd, mode);
   return file;
 }
@@ -287,6 +310,8 @@ FILE *FS(fopen) (const char* filename, const char* mode)
   FILE *result = FS(fwopen) (w_filename, w_mode);
   free (w_filename);
   free (w_mode);
+
+  printf ("%s -> %p\n", filename, result);
   return result;
 }
 #else
