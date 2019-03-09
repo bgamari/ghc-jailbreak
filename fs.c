@@ -311,7 +311,6 @@ FILE *FS(fopen) (const char* filename, const char* mode)
   free (w_filename);
   free (w_mode);
 
-  printf ("%s -> %p\n", filename, result);
   return result;
 }
 #else

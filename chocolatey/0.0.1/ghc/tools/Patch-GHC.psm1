@@ -23,10 +23,8 @@ function Use-PatchGHC {
     }
 
     foreach ($path in $paths) {
-        $lst1 = Get-ChildItem $path -Filter *.exe
-        $path2 = Join-Path $path "..\x86_64-w64-mingw32\bin" -Resolve
-        $lst2 = Get-ChildItem $path2 -Filter *.exe
-        $files = $lst1 + $lst2
+        $lst1 = Get-ChildItem "$path/.." -Filter *.exe -Recurse
+        $files = $lst1
         Write-Debug "Inspecting `'$path`' and `'$path2`'."
         $i=0
         $ix=100 / $files.Count
@@ -47,9 +45,7 @@ function Use-PatchGHC {
             Write-Debug ("Patched " + $files.Count + " executables. Copying runtimes.")
             Get-ChildItem -Path $redistdir -Filter *.dll `
             | ForEach-Object { Copy-Item -Path $_.FullName -Destination $path `
-                                         -Force; `
-                               Copy-Item -Path $_.FullName -Destination $path2 `
-                                         -Force }
+                                         -Force; }
             Write-Debug ("installed new CRT in `'$path`' and `'$path2`'.")
         }
     }
