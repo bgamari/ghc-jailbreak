@@ -492,11 +492,6 @@ _free_locale=msvcrt._free_locale
 _fscanf_l=msvcrt._fscanf_l
 _fscanf_s_l=msvcrt._fscanf_s_l
 
-_fstat=msvcrt._fstat
-
-_fstat64=msvcrt._fstat64
-_fstati64=msvcrt._fstati64
-_fstat64i32=msvcrt._fstat
 _ftime=msvcrt._ftime
 
 _ftime32_s=msvcrt._ftime32_s
@@ -948,11 +943,7 @@ _sprintf_p_l=msvcrt._sprintf_p_l
 _sprintf_s_l=msvcrt._sprintf_s_l
 _sscanf_l=msvcrt._sscanf_l
 _sscanf_s_l=msvcrt._sscanf_s_l
-_stat=msvcrt._stat
-_stat64=msvcrt._stat64
-_stati64=msvcrt._stati64
 
-_stat64i32=msvcrt._stat
 _statusfp=msvcrt._statusfp
 _strcmpi=msvcrt._strcmpi
 _strcoll_l=msvcrt._strcoll_l
@@ -1219,11 +1210,7 @@ _wspawnvp=msvcrt._wspawnvp
 _wspawnvpe=msvcrt._wspawnvpe
 _wsplitpath=msvcrt._wsplitpath
 _wsplitpath_s=msvcrt._wsplitpath_s
-_wstat=msvcrt._wstat
-_wstat64=msvcrt._wstat64
-_wstati64=msvcrt._wstati64
 
-_wstat64i32=msvcrt._wstat
 _wstrdate=msvcrt._wstrdate
 ; _wstrdate_s replaced by emu
 _wstrtime=msvcrt._wstrtime
@@ -1529,6 +1516,11 @@ wprintf_s=msvcrt.wprintf_s
 wscanf=msvcrt.wscanf
 wscanf_s=msvcrt.wscanf_s
 
+_fstat=msvcrt._fstat
+_fstat64=msvcrt._fstat64
+_fstati64=msvcrt._fstati64
+_fstat64i32=msvcrt._fstat
+
 ; re-directed api calls
 _fsopen=muxcrt.__phyx__fsopen
 _open=muxcrt.__phyx__open
@@ -1538,3 +1530,13 @@ _wfsopen=muxcrt.__phyx__wfsopen
 _wopen=muxcrt.__phyx__wopen
 _wsopen=muxcrt.__phyx__wsopen
 fopen=muxcrt.__phyx_fopen
+
+_wstat=muxcrt.__phyx__wstat
+_wstat64=muxcrt.__phyx__wstat64
+_wstati64=muxcrt.__phyx__wstat64
+_wstat64i32=muxcrt.__phyx__wstat
+
+_stat=muxcrt.__phyx__stat
+_stat64=muxcrt.__phyx__stat64
+_stati64=muxcrt.__phyx__stat64
+_stat64i32=muxcrt.__phyx__stat

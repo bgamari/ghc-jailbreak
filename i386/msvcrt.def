@@ -1,4 +1,4 @@
-LIBRARY "msvcrt.dll"
+LIBRARY "phxcrt.dll"
 EXPORTS
 iscsymf=msvcrt.__iscsymf
 iscsym=msvcrt.__iscsym
@@ -437,13 +437,6 @@ _fputwchar=msvcrt._fputwchar
 
 _free_locale=msvcrt._free_locale
 
-
-
-
-_fstat=msvcrt._fstat
-_fstat32=msvcrt._fstat
-_fstat64=msvcrt._fstat64
-_fstati64=msvcrt._fstati64
 
 _ftime=msvcrt._ftime
 
@@ -900,10 +893,6 @@ _sprintf_p_l=msvcrt._sprintf_p_l
 _sprintf_s_l=msvcrt._sprintf_s_l
 _sscanf_l=msvcrt._sscanf_l
 _sscanf_s_l=msvcrt._sscanf_s_l
-_stat=msvcrt._stat
-_stat64=msvcrt._stat64
-_stati64=msvcrt._stati64
-_stat32=msvcrt._stat
 
 _statusfp=msvcrt._statusfp
 _strcmpi=msvcrt._strcmpi
@@ -1171,10 +1160,6 @@ _wspawnvp=msvcrt._wspawnvp
 _wspawnvpe=msvcrt._wspawnvpe
 _wsplitpath=msvcrt._wsplitpath
 _wsplitpath_s=msvcrt._wsplitpath_s
-_wstat=msvcrt._wstat
-_wstat64=msvcrt._wstat64
-_wstati64=msvcrt._wstati64
-_wstat32=msvcrt._wstat
 
 _wstrdate=msvcrt._wstrdate
 ; _wstrdate_s replaced by emu
@@ -1481,6 +1466,11 @@ wprintf_s=msvcrt.wprintf_s
 wscanf=msvcrt.wscanf
 wscanf_s=msvcrt.wscanf_s
 
+_fstat=msvcrt._fstat
+_fstat32=msvcrt._fstat
+_fstat64=msvcrt._fstat64
+_fstati64=msvcrt._fstati64
+
 ; re-directed api calls
 _fsopen=muxcrt.___phyx__fsopen
 _open=muxcrt.___phyx__open
@@ -1490,3 +1480,13 @@ _wfsopen=muxcrt.___phyx__wfsopen
 _wopen=muxcrt.___phyx__wopen
 _wsopen=muxcrt.___phyx__wsopen
 fopen=muxcrt.___phyx_fopen
+
+_wstat=muxcrt.___phyx__wstat
+_wstat64=muxcrt.___phyx__wstat64
+_wstati64=muxcrt.___phyx__wstat64
+_wstat32=muxcrt.___phyx__wstat
+
+_stat=muxcrt.___phyx__stat
+_stat64=muxcrt.___phyx__stat64
+_stati64muxcrt.___phyx__stat64
+_stat32=muxcrt.___phyx__stat
