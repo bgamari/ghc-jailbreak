@@ -26,7 +26,7 @@
             • GCC and related tools will be able to handle paths longer than 255 characters
             • Cabal v2 and Backpack will be fully functional on Windows
 
-    More details at <blog url>
+    More details at https://hub.zhox.com/
     </description>
     <projectUrl>https://github.com/Mistuke/ghc-jailbreak</projectUrl>
     <tags>ghc haskell</tags>
@@ -46,9 +46,9 @@
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
-    <file src="..\..\i686\*.dll" target="tools\i686" />
-    <file src="..\..\i686\*.exe" target="tools\i686" />
-    <file src="..\..\x86_64\*.dll" target="tools\x86_64" />
-    <file src="..\..\x86_64\*.exe" target="tools\x86_64" />
+    <file src="..\..\..\i686\*.dll" target="tools\i686" />
+    <file src="..\..\..\i686\*.exe" target="tools\i686" />
+    <file src="..\..\..\x86_64\*.dll" target="tools\x86_64" />
+    <file src="..\..\..\x86_64\*.exe" target="tools\x86_64" />
   </files>
 </package>

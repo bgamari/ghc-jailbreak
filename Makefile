@@ -1,6 +1,6 @@
 CC:=gcc
-CFLAGS=-O2 -DUNICODE -D__USE_MINGW_ANSI_STDIO=1 -std=c99 -municode \
-       -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 $(CFLAGS)
+CFLAGS+=-O2 -DUNICODE -D__USE_MINGW_ANSI_STDIO=1 -std=c99 -municode \
+       -DWINVER=0x0601 -D_WIN32_WINNT=0x0601
 LDFLAGS=-ldbghelp -limagehlp
 
 target:=$(shell uname -m)
