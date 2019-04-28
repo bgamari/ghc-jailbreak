@@ -29,6 +29,8 @@ show_usage (void)
 static bool
 rewrite_import_address_table (void*, bool*);
 
+extern void abort (void);
+
 int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
 {
   if (argc != 3)
@@ -54,6 +56,16 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
   wchar_t* filepath = FS(create_device_name) (argv[2]);
   if (wcslen (filepath) == 0)
     goto fail;
+
+#if defined(ONLY_CHOCOLATEY)
+  if (wcsstr (filepath, L"\\chocolatey\\") == NULL)
+    {
+      wprintf (L"This tool can only be used to patch GHC installed via Chocolatey.\n");
+      wprintf (L"Since I have detected a different install I will now abort.\n");
+      abort ();
+    }
+#endif
+
   int flen = wcslen (filepath)+5;
   wchar_t* bak_filepath = malloc (flen * sizeof (wchar_t));
   if (swprintf (bak_filepath, flen, L"%ls.bak", filepath) < 0)
@@ -64,7 +76,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
     goto restore;
 
 #if USE_BACKUPS
-  wprintf (L"creating backup...\n");
+  wprintf (L"Creating backup...\n");
   if (!CopyFileW (filepath, bak_filepath, false))
     goto fail;
 #endif
@@ -77,7 +89,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
 
   if (fHwnd == INVALID_HANDLE_VALUE)
     {
-      wprintf (L"unable to open binary %ls.  aborting.\n", filepath);
+      wprintf (L"Unable to open binary %ls.  aborting.\n", filepath);
       goto fail;
     }
 
@@ -86,7 +98,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
 
   if (mHwnd == NULL)
     {
-      wprintf (L"cannot create mapping object for %ls.  aborting.\n", filepath);
+      wprintf (L"Cannot create mapping object for %ls.  Aborting.\n", filepath);
       CloseHandle (fHwnd);
       goto fail;
     }
@@ -94,7 +106,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
   void* ptr = MapViewOfFile (mHwnd, FILE_MAP_WRITE | FILE_MAP_READ, 0, 0, 0);
   if (ptr == NULL)
     {
-      wprintf (L"cannot create view mapping for %ls.  aborting.\n", filepath);
+      wprintf (L"Cannot create view mapping for %ls.  Aborting.\n", filepath);
       CloseHandle (fHwnd);
       CloseHandle (mHwnd);
       goto fail;
@@ -104,7 +116,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
   if (!rewrite_import_address_table (ptr, &nothing_to_do))
     {
       if (nothing_to_do)
-        printf ("terminating patching...\n");
+        printf ("Terminating patching...\n");
       else
         printf ("Oops, something went wrong. Aborting...\n");
       UnmapViewOfFile (ptr);
@@ -116,7 +128,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
         goto fail;
     }
 
-  printf ("calculating new checksum...\n");
+  printf ("Calculating new checksum...\n");
   DWORD old, new;
   PIMAGE_NT_HEADERS hdr = CheckSumMappedFile (ptr, filesize, &old, &new);
   if (hdr == NULL)
@@ -125,10 +137,10 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
       goto fail;
     }
 
-  printf ("old checksum 0x%lx, new checksum 0x%lx\n", old, new);
+  printf ("Old checksum 0x%lx, New checksum 0x%lx\n", old, new);
   hdr->OptionalHeader.CheckSum = new;
 
-  printf ("import description table rewritten. Good to go!\n");
+  printf ("Import description table rewritten. Good to go!\n");
   UnmapViewOfFile (ptr);
   CloseHandle (fHwnd);
   CloseHandle (mHwnd);
@@ -147,9 +159,9 @@ fail:
     }
 restore:
 #if USE_BACKUPS
-  printf ("restoring backup..\n");
+  printf ("Restoring backup..\n");
   if (!MoveFileEx (bak_filepath, filepath, MOVEFILE_REPLACE_EXISTING))
-    wprintf (L"could not restore backup.  Keeping file %ls.\n", bak_filepath);
+    wprintf (L"Could not restore backup.  Keeping file %ls.\n", bak_filepath);
   else
     DeleteFileW (bak_filepath);
 #endif
@@ -179,7 +191,7 @@ rewrite_import_address_table (void* ptr, bool *nothing_to_do)
 
   if (importDir.Size == 0)
     {
-      printf ("no import headers.  Done.");
+      printf ("No import headers.  Done.");
       return true;
     }
 
@@ -193,7 +205,7 @@ rewrite_import_address_table (void* ptr, bool *nothing_to_do)
         = (char*)ImageRvaToVa(ntHeader, ptr, importDesc->Name, NULL);
       if (name == NULL)
         {
-          printf ("did not find C runtime, nothing to do.\n");
+          printf ("Did not find C runtime, nothing to do.\n");
           *nothing_to_do = true;
           return false;
         }
@@ -201,9 +213,9 @@ rewrite_import_address_table (void* ptr, bool *nothing_to_do)
       if (strncmp ("msvcrt.dll", name, 10) == 0)
         {
           char runtime[] = "phxcrt.dll";
-          printf ("found C runtime entry (%s). Rewriting..\n", name);
+          printf ("Found C runtime entry (%s). Rewriting..\n", name);
           memcpy (name, runtime, 10);
-          printf ("installed new C runtime entry (%s)..\n", runtime);
+          printf ("Installed new C runtime entry (%s)..\n", runtime);
           return true;
         }
       importDesc++;

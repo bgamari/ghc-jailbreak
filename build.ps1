@@ -14,6 +14,7 @@ function execute {
     $envdata = "export APPDATA=""" + $Env:AppData + """" +`
                 " && export MSYSTEM=MINGW${osBitness}" + `
                 " && export PATH=/mingw${osBitness}/bin:`$PATH" + `
+                " && export CFLAGS=""-DONLY_CHOCOLATEY""" + `
                 " && "
 
     Write-Host "$message with '$command'..."

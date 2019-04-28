@@ -1,30 +1,108 @@
 ﻿$version     = '0.0.1'
 $packageName = 'ghc-jailbreak'
-$url         = 'https://downloads.haskell.org/~ghc/8.6.3/ghc-8.6.3-i386-unknown-mingw32.tar.xz'
-$url64       = 'https://downloads.haskell.org/~ghc/8.6.3/ghc-8.6.3-x86_64-unknown-mingw32.tar.xz'
 
 $binRoot         = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $packageFullName = Join-Path $binRoot ($packageName + '-' + $version)
 $binPackageDir   = Join-Path $packageFullName "bin"
 
-$tmpPath = Join-Path $env:chocolateyPackageFolder tmp
-$tarFile = $packageName + "Install"
-$tarPath = Join-Path $tmpPath $tarFile
-$tmpFile = Join-Path $binRoot ($tarFile + "~")
+if ($env:ChocolateyForceX86 -eq $true) {
+    $invArch = "i686"
+} else {
+    $invArch = "x86_64"
+}
 
-Get-ChocolateyWebFile -PackageName $packageName -FileFullPath $tarPath `
-    -Url $url -ChecksumType sha256 -Checksum 6d221bde8e1864dab0ac121b11bae486bbbeea161b0a2591d22c4c3e322b3590 `
-    -Url64bit $url64 -ChecksumType64 sha256 -Checksum64 2fec383904e5fa79413e9afd328faf9bc700006c8c3d4bcdd8d4f2ccf0f7fa2a
-Get-ChocolateyUnzip -fileFullPath $tarPath -destination $binRoot
-Get-ChocolateyUnzip -fileFullPath $tmpFile -destination $binRoot
-rm $tmpFile # Clean up temporary file
-
-Install-ChocolateyPath "$binPackageDir"
-
-Write-Host "Hiding shims for `'$binRoot`'."
-$files = get-childitem $binRoot -include *.exe -recurse
+# Would have loved to use $env:ChocolateyToolsLocation but
+# that seems to only return C:\. Even after a call to Get-ToolsLocation
+$invTools = Join-Path $env:ChocolateyPackageFolder "tools"
+$invToolsBin = Join-Path $invTools $invArch
+$patcher = Join-Path $invToolsBin "iat-patcher.exe"
+Write-Host "Hiding shims for `'$invTools`'."
+$files = get-childitem $invTools -include *.exe -recurse
 
 foreach ($file in $files) {
     #generate an ignore file
     New-Item "$file.ignore" -type file -force | Out-Null
 }
+
+function Use-PatchGHC {
+    param( [string] $name
+         , [string] $patchtool
+         , [string] $redistdir
+         , [bool] $install = $true )
+
+    $proc = Execute-Command $name '--info' -PassThru
+    if ($proc.ExitCode -ne 0) {
+        throw ("Command `'$name --info`' did not complete successfully. ExitCode: " + $proc.ExitCode)
+    }
+
+    $infoTable = $proc.stdout
+    $paths = $infoTable -split '[\r\n]'`
+           | Select-String "C compiler command" -SimpleMatch `
+           | ForEach-Object { $_.ToString().Split('"') } `
+           | Where-Object { $_ -notlike $null} `
+           | ForEach-Object { Split-Path $_ -Resolve -ErrorAction Ignore }
+
+    if ($install -eq $true) {
+      $action = "install"
+    } else {
+      $action = "uninstall"
+    }
+
+    foreach ($path in $paths) {
+        $lst1 = Get-ChildItem "$path/.." -Filter *.exe -Recurse
+        $files = $lst1
+        Write-Debug "Inspecting `'$path`' and `'$path2`'."
+        $i=0
+        $ix=100 / $files.Count
+        foreach ($file in $files) {
+            Write-Progress -Activity Patching -Status 'Jailbreaking...' `
+                           -PercentComplete $i -CurrentOperation $file.FullName
+            $proc = Execute-Command $patchtool @($action, $file.FullName)
+            $toolOutput = $proc.stdout
+            Write-Debug $toolOutput
+            if ($proc.ExitCode -ne 0) {
+                throw ("Could not patch `'$file`'. ExitCode: " + $proc.ExitCode)
+            }
+            $i+=$ix
+            Write-Progress -Activity Patching -Status 'Jailbreaking...' `
+                           -PercentComplete $i -CurrentOperation $file.FullName
+        }
+        if ($files.Count -gt 0) {
+            Write-Debug ("Patched " + $files.Count + " executables. Copying runtimes.")
+            Get-ChildItem -Path $redistdir -Filter *.dll `
+            | ForEach-Object { Copy-Item -Path $_.FullName -Destination $path `
+                                         -Force; }
+            Write-Debug ("installed new CRT in `'$path`' and `'$path2`'.")
+        }
+    }
+
+    Write-Host "Done patching GHC's Mingw-w64 distribution. Good to go."
+}
+Function Execute-Command ($commandPath, $commandArguments)
+{
+  Try {
+    $pinfo = New-Object System.Diagnostics.ProcessStartInfo
+    $pinfo.FileName = $commandPath
+    $pinfo.RedirectStandardError = $false
+    $pinfo.RedirectStandardOutput = $true
+    $pinfo.UseShellExecute = $false
+    $pinfo.WindowStyle = 'Hidden'
+    $pinfo.CreateNoWindow = $true
+    $pinfo.Arguments = $commandArguments
+    $p = New-Object System.Diagnostics.Process
+    $p.StartInfo = $pinfo
+    $p.Start() | Out-Null
+    [pscustomobject]@{
+        stdout = $p.StandardOutput.ReadToEnd()
+        ExitCode = $p.ExitCode
+    }
+    $p.WaitForExit()
+  }
+  Catch {
+     exit
+  }
+}
+
+# Make sure GHC is on the path.
+refreshenv
+Use-PatchGHC ghc $patcher $invToolsBin $true

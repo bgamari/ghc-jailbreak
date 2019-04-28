@@ -14,24 +14,30 @@
     GHC Jailbreak is a tool not affiliated with GHC HQ which aims to improve the
     Haskell tooling on Windows.  This package works by binary patching the mingw-w64
     distribution that comes bundled with GHC.  It does not touch GHC itself and
-    this is only compatible with GHC 8.6 and newer.
+    is therefore only compatible with GHC 8.6 and newer.
 
-    Full use of this utility also requires cabal >= 2.2.+++++++++++++++++++++++++++++
+    This tool swaps out the C runtime of GCC and Binutils out with a new one
+    which provides modern semantics on top of the old APIs that these tools use.
+
+    Full use of this utility also requires cabal >= 2.4.  Any changes it does
+    are fully reversed on an uninstall.
 
     Highlights:
             • GCC and related tools will be able to handle paths longer than 255 characters
+            • Cabal v2 and Backpack will be fully functional on Windows
 
+    More details at <blog url>
     </description>
-    <projectUrl>https://www.haskell.org/ghc/</projectUrl>
+    <projectUrl>https://github.com/Mistuke/ghc-jailbreak</projectUrl>
     <tags>ghc haskell</tags>
-    <copyright>Copyright 2017, The University Court of the University of Glasgow.</copyright>
-    <licenseUrl>https://www.haskell.org/ghc/license</licenseUrl>
+    <copyright>Copyright 2019, Tamar Christina.</copyright>
+    <licenseUrl>https://github.com/Mistuke/ghc-jailbreak/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
     <iconUrl>http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2000px-Haskell-Logo.svg.png</iconUrl>
     <dependencies>
       <dependency id="cabal" version="2.4.0.0" />
-      <dependency id="ghc" version="8.6.2" />
+      <dependency id="ghc" version="8.6.4" />
     </dependencies>
     <releaseNotes>https://github.com/Mistuke/ghc-jailbreak/changelog.md</releaseNotes>
     <docsUrl>https://github.com/Mistuke/ghc-jailbreak/readme.md</docsUrl>
@@ -40,5 +46,9 @@
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="..\..\i686\*.dll" target="tools\i686" />
+    <file src="..\..\i686\*.exe" target="tools\i686" />
+    <file src="..\..\x86_64\*.dll" target="tools\x86_64" />
+    <file src="..\..\x86_64\*.exe" target="tools\x86_64" />
   </files>
 </package>
