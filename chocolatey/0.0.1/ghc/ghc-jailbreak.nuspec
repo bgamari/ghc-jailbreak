@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>ghc-jailbreak</id>
-    <title>GHC</title>
+    <title>GHC Jailbreak</title>
     <version>0.0.1</version>
     <authors>Tamar Christina</authors>
     <owners>Tamar Christina</owners>
@@ -45,7 +45,7 @@
     <projectSourceUrl>https://github.com/Mistuke/ghc-jailbreak/</projectSourceUrl>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\*.ps1" target="tools" />
     <file src="..\..\..\i686\*.dll" target="tools\i686" />
     <file src="..\..\..\i686\*.exe" target="tools\i686" />
     <file src="..\..\..\x86_64\*.dll" target="tools\x86_64" />

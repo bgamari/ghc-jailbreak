@@ -35,6 +35,7 @@ execute "Building i686 patcher" $shell_x86 32 $shell_args
 
 $path = Split-Path $MyInvocation.MyCommand.Path -Parent
 $bin  = Join-Path $path "bin"
+mkdir -Force $bin
 Write-Host "$bin"
 ls ghc*.nuspec -recurse -File | ForEach-Object {
             $dir = (Split-Path $_.FullName -Parent)
