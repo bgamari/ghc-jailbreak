@@ -9,7 +9,9 @@
 #include <wchar.h>
 #include <imagehlp.h>
 
+#ifndef USE_BACKUPS
 #define USE_BACKUPS 1
+#endif
 
 static void
 show_usage (void)

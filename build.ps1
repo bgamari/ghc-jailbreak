@@ -15,6 +15,7 @@ function execute {
                 " && export MSYSTEM=MINGW${osBitness}" + `
                 " && export PATH=/mingw${osBitness}/bin:`$PATH" + `
                 " && export CFLAGS=""-DONLY_CHOCOLATEY""" + `
+                # " && export CFLAGS=""-DUSE_BACKUPS=0""" + `
                 " && "
 
     Write-Host "$message with '$command'..."

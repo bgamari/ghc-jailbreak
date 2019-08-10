@@ -1,6 +1,7 @@
 CC:=gcc
 CFLAGS+=-O2 -DUNICODE -D__USE_MINGW_ANSI_STDIO=1 -std=c99 -municode \
-       -DWINVER=0x0601 -D_WIN32_WINNT=0x0601
+       -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DUSE_BACKUPS=0
+# -DONLY_CHOCOLATEY=1 -DUSE_BACKUPS=0
 LDFLAGS=-ldbghelp -limagehlp
 
 target:=$(shell uname -m)
