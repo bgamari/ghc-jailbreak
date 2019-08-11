@@ -195,7 +195,7 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
     dwCreationDisposition = OPEN_ALWAYS;
   if (HAS_FLAG (oflag, (_O_CREAT | _O_EXCL)))
     dwCreationDisposition = CREATE_NEW;
-  if (HAS_FLAG (oflag, _O_TRUNC) && !HAS_FLAG (oflag, _O_CREAT))
+  if (HAS_FLAG (oflag, _O_TRUNC)) //&& !HAS_FLAG (oflag, _O_CREAT))
     dwCreationDisposition = TRUNCATE_EXISTING;
 
   /* Set file access attributes.  */
@@ -243,6 +243,8 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   const int mode_mask = _O_TEXT | _O_BINARY | _O_U16TEXT | _O_U8TEXT | _O_WTEXT;
   if ((oflag & mode_mask) && (-1 == _setmode (fd, oflag & mode_mask)))
     return setErrNoFromWin32Error ();
+
+  //fprintf (stderr, "%ls: Handle: 0x%lx, Fd: %d, oflag: %d, shflags: %d, pmode: %d\n", filename, hResult, fd, oflag, shflag, pmode);
 
   return fd;
 }
@@ -342,6 +344,19 @@ FILE *FS(fopen) (const char* filename, const char* mode)
   FILE *result = FS(fwopen) (w_filename, w_mode);
   free (w_filename);
   free (w_mode);
+
+  return result;
+}
+
+int FS(sopen) (const char* filename, int oflag, int shflag, int pmode)
+{
+  size_t len = mbstowcs (NULL, filename, 0);
+  wchar_t *w_filename = malloc (sizeof (wchar_t) * (len + 1));
+  mbstowcs (w_filename, filename, len);
+  w_filename[len] = L'\0';
+
+  int result = FS(swopen) (w_filename, oflag, shflag, pmode);
+  free (w_filename);
 
   return result;
 }
