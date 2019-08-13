@@ -5,3 +5,6 @@
 *.s
 bin
 *.dll
+*.zip
+*.tar.gz
+ghc-*.sh
