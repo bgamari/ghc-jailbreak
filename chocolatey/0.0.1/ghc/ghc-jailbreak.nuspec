@@ -36,8 +36,8 @@
     <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
     <iconUrl>http://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2000px-Haskell-Logo.svg.png</iconUrl>
     <dependencies>
-      <dependency id="cabal" version="2.4.0.0" />
-      <dependency id="ghc" version="8.6.4" />
+      <!-- <dependency id="cabal" version="2.4.0.0" />
+      <dependency id="ghc" version="8.6.2" /> -->
     </dependencies>
     <releaseNotes>https://github.com/Mistuke/ghc-jailbreak/changelog.md</releaseNotes>
     <docsUrl>https://github.com/Mistuke/ghc-jailbreak/readme.md</docsUrl>

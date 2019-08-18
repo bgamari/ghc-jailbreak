@@ -195,8 +195,10 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
     dwCreationDisposition = OPEN_ALWAYS;
   if (HAS_FLAG (oflag, (_O_CREAT | _O_EXCL)))
     dwCreationDisposition = CREATE_NEW;
-  if (HAS_FLAG (oflag, _O_TRUNC)) //&& !HAS_FLAG (oflag, _O_CREAT))
+  if (HAS_FLAG (oflag, _O_TRUNC) && !HAS_FLAG (oflag, _O_CREAT))
     dwCreationDisposition = TRUNCATE_EXISTING;
+  if (HAS_FLAG (oflag, _O_TRUNC) && HAS_FLAG (oflag, _O_CREAT))
+    dwCreationDisposition = CREATE_ALWAYS;
 
   /* Set file access attributes.  */
   DWORD dwFlagsAndAttributes = FILE_ATTRIBUTE_NORMAL;
@@ -228,6 +230,7 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   HANDLE hResult
     = CreateFileW (_filename, dwDesiredAccess, dwShareMode, &securityAttributes,
                    dwCreationDisposition, dwFlagsAndAttributes, NULL);
+
   free (_filename);
   if (INVALID_HANDLE_VALUE == hResult)
     return setErrNoFromWin32Error ();
@@ -243,8 +246,6 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   const int mode_mask = _O_TEXT | _O_BINARY | _O_U16TEXT | _O_U8TEXT | _O_WTEXT;
   if ((oflag & mode_mask) && (-1 == _setmode (fd, oflag & mode_mask)))
     return setErrNoFromWin32Error ();
-
-  //fprintf (stderr, "%ls: Handle: 0x%lx, Fd: %d, oflag: %d, shflags: %d, pmode: %d\n", filename, hResult, fd, oflag, shflag, pmode);
 
   return fd;
 }

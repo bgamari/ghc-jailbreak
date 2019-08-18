@@ -14,7 +14,7 @@ function execute {
     $envdata = "export APPDATA=""" + $Env:AppData + """" +`
                 " && export MSYSTEM=MINGW${osBitness}" + `
                 " && export PATH=/mingw${osBitness}/bin:`$PATH" + `
-                " && export CFLAGS=""-DONLY_CHOCOLATEY""" + `
+                " && export CFLAGS=""-DONLY_CHOCOLATEY=1""" + `
                 # " && export CFLAGS=""-DUSE_BACKUPS=0""" + `
                 " && "
 

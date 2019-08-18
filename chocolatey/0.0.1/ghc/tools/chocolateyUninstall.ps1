@@ -51,11 +51,11 @@ function Use-PatchGHC {
     foreach ($path in $paths) {
         $lst1 = Get-ChildItem "$path/.." -Filter *.exe -Recurse
         $files = $lst1
-        Write-Debug "Inspecting `'$path`'."
+        Write-Debug "Inspecting `'$path`' and `'$path2`'."
         $i=0
         $ix=100 / $files.Count
         foreach ($file in $files) {
-            Write-Progress -Activity Patching -Status 'Jailbreaking...' `
+            Write-Progress -Activity Patching -Status 'Restoring...' `
                            -PercentComplete $i -CurrentOperation $file.FullName
             $proc = Execute-Command $patchtool @($action, $file.FullName)
             $toolOutput = $proc.stdout
@@ -64,12 +64,11 @@ function Use-PatchGHC {
                 throw ("Could not patch `'$file`'. ExitCode: " + $proc.ExitCode)
             }
 
-            Write-Debug ("Patched executable. Copying runtimes.")
-            Get-ChildItem -Path $redistdir -Filter *.dll `
-            | ForEach-Object { Copy-Item -Path $_.FullName -Destination `
-                                         $file.Directory.FullName -Force; }
+            Write-Debug ("Restored executable. Deleting runtimes.")
+            Remove-Item -Path $file.Directory.FullName `
+                        -Include muxcrt.dll, phxcrt.dll -Force
             $i+=$ix
-            Write-Progress -Activity Patching -Status 'Jailbreaking...' `
+            Write-Progress -Activity Patching -Status 'Restoring...' `
                            -PercentComplete $i -CurrentOperation $file.FullName
         }
     }
@@ -103,4 +102,4 @@ Function Execute-Command ($commandPath, $commandArguments)
 
 # Make sure GHC is on the path.
 refreshenv
-Use-PatchGHC ghc $patcher $invToolsBin $true
+Use-PatchGHC ghc $patcher $invToolsBin $false

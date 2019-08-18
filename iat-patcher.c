@@ -59,7 +59,7 @@ int wmain (int argc, wchar_t *argv[], wchar_t *envp[])
   if (wcslen (filepath) == 0)
     goto fail;
 
-#if defined(ONLY_CHOCOLATEY)
+#if ONLY_CHOCOLATEY
   if (wcsstr (filepath, L"\\chocolatey\\") == NULL)
     {
       wprintf (L"This tool can only be used to patch GHC installed via Chocolatey.\n");
