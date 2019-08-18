@@ -197,7 +197,7 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
     dwCreationDisposition = CREATE_NEW;
   if (HAS_FLAG (oflag, _O_TRUNC) && !HAS_FLAG (oflag, _O_CREAT))
     dwCreationDisposition = TRUNCATE_EXISTING;
-  if (HAS_FLAG (oflag, _O_TRUNC) && HAS_FLAG (oflag, _O_CREAT))
+  if (HAS_FLAG (oflag, _O_TRUNC | _O_CREAT))
     dwCreationDisposition = CREATE_ALWAYS;
 
   /* Set file access attributes.  */
