@@ -23,32 +23,30 @@ function Use-PatchGHC {
     }
 
     foreach ($path in $paths) {
-        $lst1 = Get-ChildItem "$path/.." -Filter *.exe -Recurse
-        $files = $lst1
-        Write-Debug "Inspecting `'$path`' and `'$path2`'."
-        $i=0
-        $ix=100 / $files.Count
-        foreach ($file in $files) {
-            Write-Progress -Activity Patching -Status 'Jailbreaking...' `
-                           -PercentComplete $i -CurrentOperation $file.FullName
-            $proc = Execute-Command $patchtool @($action, $file.FullName)
-            $toolOutput = $proc.stdout
-            Write-Debug $toolOutput
-            if ($proc.ExitCode -ne 0) {
-                throw ("Could not patch `'$file`'. ExitCode: " + $proc.ExitCode)
-            }
-            $i+=$ix
-            Write-Progress -Activity Patching -Status 'Jailbreaking...' `
-                           -PercentComplete $i -CurrentOperation $file.FullName
-        }
-        if ($files.Count -gt 0) {
-            Write-Debug ("Patched " + $files.Count + " executables. Copying runtimes.")
-            Get-ChildItem -Path $redistdir -Filter *.dll `
-            | ForEach-Object { Copy-Item -Path $_.FullName -Destination $path `
-                                         -Force; }
-            Write-Debug ("installed new CRT in `'$path`' and `'$path2`'.")
-        }
-    }
+      $lst1 = Get-ChildItem "$path/.." -Filter *.exe -Recurse
+      $files = $lst1
+      Write-Debug "Inspecting `'$path`'."
+      $i=0
+      $ix=100 / $files.Count
+      foreach ($file in $files) {
+          Write-Progress -Activity Patching -Status 'Jailbreaking...' `
+                         -PercentComplete $i -CurrentOperation $file.FullName
+          $proc = Execute-Command $patchtool @($action, $file.FullName)
+          $toolOutput = $proc.stdout
+          Write-Debug $toolOutput
+          if ($proc.ExitCode -ne 0) {
+              throw ("Could not patch `'$file`'. ExitCode: " + $proc.ExitCode)
+          }
+
+          Write-Debug ("Patched executable. Copying runtimes.")
+          Get-ChildItem -Path $redistdir -Filter *.dll `
+          | ForEach-Object { Copy-Item -Path $_.FullName -Destination `
+                                       $file.Directory.FullName -Force; }
+          $i+=$ix
+          Write-Progress -Activity Patching -Status 'Jailbreaking...' `
+                         -PercentComplete $i -CurrentOperation $file.FullName
+      }
+  }
 
     Write-Host "Done patching GHC's Mingw-w64 distribution. Good to go."
 }

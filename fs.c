@@ -152,7 +152,7 @@ int setErrNoFromWin32Error() {
 }
 
 
-#define HAS_FLAG(a,b) ((a & b) == b)
+#define HAS_FLAG(a,b) (((a) & (b)) == (b))
 
 int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
 {
@@ -190,23 +190,27 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
     }
 
   /* Create file disposition.  */
-  DWORD dwCreationDisposition = OPEN_EXISTING;
-  if (HAS_FLAG (oflag, _O_CREAT))
-    dwCreationDisposition = OPEN_ALWAYS;
+  DWORD dwCreationDisposition = 0;
   if (HAS_FLAG (oflag, (_O_CREAT | _O_EXCL)))
-    dwCreationDisposition = CREATE_NEW;
-  if (HAS_FLAG (oflag, _O_TRUNC) && !HAS_FLAG (oflag, _O_CREAT))
-    dwCreationDisposition = TRUNCATE_EXISTING;
-  if (HAS_FLAG (oflag, _O_TRUNC | _O_CREAT))
-    dwCreationDisposition = CREATE_ALWAYS;
+    dwCreationDisposition |= CREATE_NEW;
+  else if (HAS_FLAG (oflag, _O_TRUNC | _O_CREAT))
+    dwCreationDisposition |= CREATE_ALWAYS;
+  else if (HAS_FLAG (oflag, _O_TRUNC) && !HAS_FLAG (oflag, O_RDONLY))
+    dwCreationDisposition |= TRUNCATE_EXISTING;
+  else if (HAS_FLAG (oflag, _O_APPEND))
+    dwCreationDisposition |= OPEN_EXISTING;
+  else if (HAS_FLAG (oflag, _O_CREAT))
+    dwCreationDisposition |= OPEN_ALWAYS;
+  else
+    dwCreationDisposition |= OPEN_EXISTING;
 
   /* Set file access attributes.  */
   DWORD dwFlagsAndAttributes = FILE_ATTRIBUTE_NORMAL;
   if (HAS_FLAG (oflag, _O_RDONLY))
     dwFlagsAndAttributes |= 0; /* No special attribute.  */
-  if (HAS_FLAG (oflag, (_O_CREAT | _O_TEMPORARY)))
+  if (HAS_FLAG (oflag, _O_TEMPORARY))
     dwFlagsAndAttributes |= FILE_FLAG_DELETE_ON_CLOSE;
-  if (HAS_FLAG (oflag, (_O_CREAT | _O_SHORT_LIVED)))
+  if (HAS_FLAG (oflag, _O_SHORT_LIVED))
     dwFlagsAndAttributes |= FILE_ATTRIBUTE_TEMPORARY;
   if (HAS_FLAG (oflag, _O_RANDOM))
     dwFlagsAndAttributes |= FILE_FLAG_RANDOM_ACCESS;
@@ -215,6 +219,11 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   /* Flag is only valid on it's own.  */
   if (dwFlagsAndAttributes != FILE_ATTRIBUTE_NORMAL)
     dwFlagsAndAttributes &= ~FILE_ATTRIBUTE_NORMAL;
+
+  /* Ensure we have shared read for files which are opened read-only. */
+  if (HAS_FLAG (dwCreationDisposition, OPEN_EXISTING)
+      && ((dwDesiredAccess & (GENERIC_WRITE|GENERIC_READ)) == GENERIC_READ))
+    dwShareMode |= FILE_SHARE_READ;
 
   /* Set security attributes.  */
   SECURITY_ATTRIBUTES securityAttributes;
