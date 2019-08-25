@@ -117,8 +117,9 @@ cleanup:
   return NULL;
 }
 
+static int setErrNoFromWin32Error (void);
 static
-int setErrNoFromWin32Error() {
+int setErrNoFromWin32Error () {
   switch (GetLastError()) {
     case ERROR_SUCCESS:
       errno = 0;
