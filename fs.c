@@ -28,7 +28,7 @@
 
 /* This function converts Windows paths between namespaces. More specifically
    It converts an explorer style path into a NT or Win32 namespace.
-   This has several caveats but they are caviats that are native to Windows and
+   This has several caveats but they are caveats that are native to Windows and
    not POSIX. See
    https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247.aspx.
    Anything else such as raw device paths we leave untouched.  The main benefit
@@ -158,18 +158,20 @@ int setErrNoFromWin32Error () {
 int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
 {
   /* Construct access mode.  */
+  /* https://docs.microsoft.com/en-us/windows/win32/fileio/file-access-rights-constants  */
   DWORD dwDesiredAccess = 0;
   if (HAS_FLAG (oflag, _O_RDONLY))
-    dwDesiredAccess |= GENERIC_READ | FILE_READ_DATA | FILE_READ_ATTRIBUTES;
+    dwDesiredAccess |= GENERIC_READ;
   if (HAS_FLAG (oflag, _O_RDWR))
-    dwDesiredAccess |= GENERIC_WRITE | GENERIC_READ | FILE_READ_DATA |
-                       FILE_WRITE_DATA | FILE_READ_ATTRIBUTES |
-                       FILE_WRITE_ATTRIBUTES;
-  if (HAS_FLAG (oflag,  _O_WRONLY))
-    dwDesiredAccess|= GENERIC_WRITE | FILE_WRITE_DATA | FILE_WRITE_ATTRIBUTES;
+    dwDesiredAccess |= GENERIC_WRITE | GENERIC_READ;
+  if (HAS_FLAG (oflag, _O_WRONLY))
+    dwDesiredAccess |= GENERIC_WRITE;
+  if (HAS_FLAG (oflag, _O_APPEND))
+    dwDesiredAccess |= FILE_APPEND_DATA;
 
   /* Construct shared mode.  */
-  DWORD dwShareMode = FILE_SHARE_DELETE | FILE_SHARE_READ | FILE_SHARE_WRITE;
+  /* https://docs.microsoft.com/en-us/windows/win32/fileio/file-attribute-constants */
+  DWORD dwShareMode = FILE_SHARE_READ | FILE_SHARE_WRITE;
   if (HAS_FLAG (shflag, _SH_DENYRW))
     dwShareMode &= ~(FILE_SHARE_READ | FILE_SHARE_WRITE);
   if (HAS_FLAG (shflag, _SH_DENYWR))
@@ -191,6 +193,7 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
     }
 
   /* Create file disposition.  */
+  /* https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea */
   DWORD dwCreationDisposition = 0;
   if (HAS_FLAG (oflag, (_O_CREAT | _O_EXCL)))
     dwCreationDisposition |= CREATE_NEW;
@@ -198,6 +201,8 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
     dwCreationDisposition |= CREATE_ALWAYS;
   else if (HAS_FLAG (oflag, _O_TRUNC) && !HAS_FLAG (oflag, O_RDONLY))
     dwCreationDisposition |= TRUNCATE_EXISTING;
+  else if (HAS_FLAG (oflag, _O_APPEND | _O_CREAT))
+    dwCreationDisposition |= OPEN_ALWAYS;
   else if (HAS_FLAG (oflag, _O_APPEND))
     dwCreationDisposition |= OPEN_EXISTING;
   else if (HAS_FLAG (oflag, _O_CREAT))
@@ -210,7 +215,10 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   if (HAS_FLAG (oflag, _O_RDONLY))
     dwFlagsAndAttributes |= 0; /* No special attribute.  */
   if (HAS_FLAG (oflag, _O_TEMPORARY))
-    dwFlagsAndAttributes |= FILE_FLAG_DELETE_ON_CLOSE;
+    {
+      dwFlagsAndAttributes |= FILE_FLAG_DELETE_ON_CLOSE;
+      dwShareMode |= FILE_SHARE_DELETE;
+    }
   if (HAS_FLAG (oflag, _O_SHORT_LIVED))
     dwFlagsAndAttributes |= FILE_ATTRIBUTE_TEMPORARY;
   if (HAS_FLAG (oflag, _O_RANDOM))
