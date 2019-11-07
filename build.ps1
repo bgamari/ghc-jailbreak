@@ -14,8 +14,8 @@ function execute {
     $envdata = "export APPDATA=""" + $Env:AppData + """" +`
                 " && export MSYSTEM=MINGW${osBitness}" + `
                 " && export PATH=/mingw${osBitness}/bin:`$PATH" + `
-                " && export CFLAGS=""-DONLY_CHOCOLATEY=1""" + `
-                " && export CFLAGS=""-DUSE_BACKUPS=1""" + `
+                " && export CFLAGS=""-DONLY_CHOCOLATEY=0""" + `
+                " && export CFLAGS=""-DUSE_BACKUPS=0""" + `
                 " && "
 
     Write-Host "$message with '$command'..."
