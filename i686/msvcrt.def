@@ -1484,12 +1484,12 @@ _stat64=muxcrt.___phyx__stat64
 _stati64muxcrt.___phyx__stat64
 _stat32=muxcrt.___phyx__stat
 
-rename=muxcrt.__phyx_rename
-_wrename=muxcrt.__phyx__wrename
+rename=muxcrt.___phyx_rename
+_wrename=muxcrt.___phyx__wrename
 
-unlink=muxcrt.__phyx__unlink
-_unlink=muxcrt.__phyx__unlink
-_wunlink=muxcrt.__phyx__wunlink
+unlink=muxcrt.___phyx__unlink
+_unlink=muxcrt.___phyx__unlink
+_wunlink=muxcrt.___phyx__wunlink
 
-remove=muxcrt.__phyx_remove
-_wremove=muxcrt.__phyx__wremove
+remove=muxcrt.___phyx_remove
+_wremove=muxcrt.___phyx__wremove
