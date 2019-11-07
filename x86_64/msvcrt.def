@@ -1539,5 +1539,5 @@ _stat64=muxcrt.__phyx__stat64
 _stati64=muxcrt.__phyx__stat64
 _stat64i32=muxcrt.__phyx__stat
 
-rename=muxcrt.__phyx__rename
+rename=muxcrt.__phyx_rename
 _wrename=muxcrt.__phyx__wrename

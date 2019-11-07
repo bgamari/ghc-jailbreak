@@ -532,7 +532,7 @@ int FS(_wrename) (const wchar_t *from, const wchar_t *to)
   return 0;
 }
 
-int FS(_rename) (const char *from, const char *to)
+int FS(rename) (const char *from, const char *to)
 {
   wchar_t * const w_from = FS(to_wide) (from);
   wchar_t * const w_to = FS(to_wide) (to);
