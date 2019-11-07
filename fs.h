@@ -37,6 +37,8 @@ int FS(_stat) (const char *path, struct _stat *buffer);
 int FS(_stat64) (const char *path, struct __stat64 *buffer);
 int FS(_wstat) (const wchar_t *path, struct _stat *buffer);
 int FS(_wstat64) (const wchar_t *path, struct __stat64 *buffer);
+int FS(_wrename) (const wchar_t *from, const wchar_t *to);
+int FS(_rename) (const char *from, const char *to);
 #else
 
 FILE *FS(fopen) (const char* filename, const char* mode);

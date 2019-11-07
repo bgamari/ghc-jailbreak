@@ -1191,7 +1191,6 @@ _wprintf_s_l=msvcrt._wprintf_s_l
 _wputenv=msvcrt._wputenv
 _wputenv_s=msvcrt._wputenv_s
 _wremove=msvcrt._wremove
-_wrename=msvcrt._wrename
 _write=msvcrt._write
 _wrmdir=msvcrt._wrmdir
 _wscanf_l=msvcrt._wscanf_l
@@ -1390,7 +1389,6 @@ rand=msvcrt.rand
 ; rand_s replaced by emu
 realloc=msvcrt.realloc
 remove=msvcrt.remove
-rename=msvcrt.rename
 rewind=msvcrt.rewind
 scanf=msvcrt.scanf
 scanf_s=msvcrt.scanf_s
@@ -1541,5 +1539,5 @@ _stat64=muxcrt.__phyx__stat64
 _stati64=muxcrt.__phyx__stat64
 _stat64i32=muxcrt.__phyx__stat
 
-_rename=muxcrt.__phyx__rename
+rename=muxcrt.__phyx__rename
 _wrename=muxcrt.__phyx__wrename
