@@ -92,7 +92,6 @@ tempnam=msvcrt._tempnam
 tzset=msvcrt._tzset
 umask=msvcrt._umask
 ungetch=msvcrt._ungetch
-unlink=msvcrt._unlink
 utime=msvcrt._utime
 wcsdup=msvcrt._wcsdup
 wcsicmp=msvcrt._wcsicmp
@@ -972,7 +971,6 @@ _umask=msvcrt._umask
 ; _umask_s replaced by emu
 _ungetch=msvcrt._ungetch
 _ungetwch=msvcrt._ungetwch
-_unlink=msvcrt._unlink
 _unloaddll=msvcrt._unloaddll
 _unlock=msvcrt._unlock
 _utime=msvcrt._utime
@@ -1140,7 +1138,6 @@ _wprintf_p_l=msvcrt._wprintf_p_l
 _wprintf_s_l=msvcrt._wprintf_s_l
 _wputenv=msvcrt._wputenv
 _wputenv_s=msvcrt._wputenv_s
-_wremove=msvcrt._wremove
 _write=msvcrt._write
 _wrmdir=msvcrt._wrmdir
 _wscanf_l=msvcrt._wscanf_l
@@ -1177,7 +1174,6 @@ _wtoi64_l=msvcrt._wtoi64_l
 _wtoi_l=msvcrt._wtoi_l
 _wtol=msvcrt._wtol
 _wtol_l=msvcrt._wtol_l
-_wunlink=msvcrt._wunlink
 _wutime=msvcrt._wutime
 
 _wutime64=msvcrt._wutime64
@@ -1338,7 +1334,6 @@ raise=msvcrt.raise
 rand=msvcrt.rand
 ; rand_s replaced by emu
 realloc=msvcrt.realloc
-remove=msvcrt.remove
 rewind=msvcrt.rewind
 scanf=msvcrt.scanf
 scanf_s=msvcrt.scanf_s
@@ -1491,3 +1486,10 @@ _stat32=muxcrt.___phyx__stat
 
 rename=muxcrt.__phyx_rename
 _wrename=muxcrt.__phyx__wrename
+
+unlink=muxcrt.__phyx__unlink
+_unlink=muxcrt.__phyx__unlink
+_wunlink=muxcrt.__phyx__wunlink
+
+remove=muxcrt.__phyx_remove
+_wremove=muxcrt.__phyx__wremove

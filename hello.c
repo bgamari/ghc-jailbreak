@@ -20,6 +20,7 @@ int main ()
 
   printf ("Hello Worldsa!%d (%d) %d\n", f, err, g);
 */
-  rename ("R:\\foo.c", "R:\\bar.c");
+  //rename ("R:\\foo.c", "R:\\bar.c");
+  remove ("R:\\bar.c");
   return 0;
 }

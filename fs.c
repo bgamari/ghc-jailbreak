@@ -543,6 +543,43 @@ int FS(rename) (const char *from, const char *to)
   return result;
 }
 
+int FS(unlink) (const char *filename)
+{
+  return FS(_unlink) (filename);
+}
+
+int FS(_unlink) (const char *filename)
+{
+  wchar_t * const w_filename = FS(to_wide) (filename);
+  int result = FS(_wunlink) (w_filename);
+  free(w_filename);
+
+  return result;
+}
+
+int FS(_wunlink) (const wchar_t *filename)
+{
+  wchar_t* const _filename = FS(create_device_name) (filename);
+  if (!_filename)
+    return -1;
+
+  if (DeleteFileW(_filename) == 0) {
+    free (_filename);
+    return setErrNoFromWin32Error ();
+  }
+
+
+  free (_filename);
+  return 0;
+}
+int FS(remove) (const char *path)
+{
+  return FS(_unlink) (path);
+}
+int FS(_wremove) (const wchar_t *path)
+{
+  return FS(_wunlink) (path);
+}
 #else
 FILE *FS(fopen) (const char* filename, const char* mode)
 {
