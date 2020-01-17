@@ -1481,7 +1481,7 @@ _wstat32=muxcrt.___phyx__wstat
 
 _stat=muxcrt.___phyx__stat
 _stat64=muxcrt.___phyx__stat64
-_stati64muxcrt.___phyx__stat64
+_stati64=muxcrt.___phyx__stat64
 _stat32=muxcrt.___phyx__stat
 
 rename=muxcrt.___phyx_rename
