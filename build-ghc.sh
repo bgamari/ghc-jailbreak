@@ -1,7 +1,7 @@
 #!/bin/bash
 
 bash_args="--login -c"
-make_args="make all -w -C `readlink -f .` -f Makefile.ghc"
+make_args="make all -w -C `readlink -f $(dirname $0)` -f Makefile.ghc"
 
 if [ -z "$MSYS32" ]; then MSYS32=/e/msys32; fi
 if [ -z "$MSYS64" ]; then MSYS64=/e/msys64; fi
