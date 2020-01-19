@@ -9,7 +9,7 @@ if [ -z "$MSYS64" ]; then MSYS64=/e/msys64; fi
 
 set -x
 
-MSYSTEM=MING64 winpty $MSYS64/usr/bin/bash.exe $bash_args "PATH=/mingw64/bin:\$PATH $make_args"
-MSYSTEM=MING32 winpty $MSYS32/usr/bin/bash.exe $bash_args "PATH=/mingw32/bin:\$PATH $make_args"
+MSYSTEM=MING64 $MSYS64/usr/bin/bash.exe $bash_args "PATH=/mingw64/bin:\$PATH $make_args"
+MSYSTEM=MING32 $MSYS32/usr/bin/bash.exe $bash_args "PATH=/mingw32/bin:\$PATH $make_args"
 
 tar -C $TOP -cvzf ghc-jailbreak.tar.gz i686/ x86_64/
