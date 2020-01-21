@@ -1459,8 +1459,8 @@ wprintf_s=msvcrt.wprintf_s
 wscanf=msvcrt.wscanf
 wscanf_s=msvcrt.wscanf_s
 
-_fstat=msvcrt._fstat
-_fstat32=msvcrt._fstat
+_fstat=muxcrt.__phyx__fstat
+_fstat32=muxcrt.__phyx__fstat
 _fstat64=msvcrt._fstat64
 _fstati64=msvcrt._fstati64
 
