@@ -1474,15 +1474,15 @@ _wopen=muxcrt.__phyx__wopen
 _wsopen=muxcrt.__phyx__wsopen
 fopen=muxcrt.__phyx_fopen
 
-_wstat=msvcrt._wstat
-_wstat64=msvcrt._wstat64
-_wstati64=msvcrt._wstat64
+_wstat=muxcrt.__phyx__wstat
+_wstat64=muxcrt.__phyx__wstat64
+_wstati64=muxcrt.__phyx__wstat64
 _wstat32=msvcrt._wstat32
 
-_stat=msvcrt._stat
-_stat64=msvcrt._stat64
-_stati64=msvcrt._stat64
-_stat32=msvcrt._stat
+_stat=muxcrt.__phyx__stat
+_stat64=muxcrt.__phyx__stat64
+_stati64=muxcrt.__phyx__stat64
+_stat32=msvcrt._stat32
 
 rename=muxcrt.__phyx_rename
 _wrename=muxcrt.__phyx__wrename
