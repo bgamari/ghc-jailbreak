@@ -1475,11 +1475,11 @@ _wsopen=muxcrt.__phyx__wsopen
 fopen=muxcrt.__phyx_fopen
 
 _wstat=muxcrt.__phyx__wstat
-_wstat64=msvcrt._wstat64
+_wstat64=muxcrt.__phyx__wstat64
 _wstati64=msvcrt._wstati64
 _wstat32=msvcrt._wstat
 
-_stat=msvcrt._stat
+_stat=muxcrt.__phyx__stat
 _stat64=msvcrt._stat64
 _stati64=msvcrt._stati64
 _stat32=msvcrt._stat
