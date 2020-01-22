@@ -474,7 +474,7 @@ static int FS(wstat_helper) (const wchar_t *path, WIN32_FILE_ATTRIBUTE_DATA *fin
       return setErrNoFromWin32Error ();
     }
 
-  ZeroMemory (&finfo, sizeof (WIN32_FILE_ATTRIBUTE_DATA));
+  ZeroMemory (finfo, sizeof (WIN32_FILE_ATTRIBUTE_DATA));
   if(!GetFileAttributesExW (_path, GetFileExInfoStandard, &finfo))
     {
       free (_path);
