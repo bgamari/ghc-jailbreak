@@ -511,7 +511,7 @@ int FS(_wstat32) (const wchar_t *path, struct _stat32 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(wstat_helper) (path, &finfo);
-  if (tinfo.nFileSizeHigh) {
+  if (finfo.nFileSizeHigh) {
     return EOVERFLOW;
   }
 
@@ -558,7 +558,7 @@ int FS(_wstat64i32) (const wchar_t *path, struct _stat64i32 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(wstat_helper) (path, &finfo);
-  if (tinfo.nFileSizeHigh) {
+  if (finfo.nFileSizeHigh) {
     return EOVERFLOW;
   }
 
