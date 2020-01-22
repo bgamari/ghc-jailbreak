@@ -511,13 +511,17 @@ int FS(_wstat32) (const wchar_t *path, struct _stat32 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(wstat_helper) (path, &finfo);
+  if (tinfo.nFileSizeHigh) {
+    return EOVERFLOW;
+  }
 
-  ZeroMemory (buffer, sizeof (struct __stat64));
+  ZeroMemory (buffer, sizeof (struct _stat32));
   buffer->st_mode  = FS(get_mode) (path, &finfo);
   buffer->st_nlink = 1;
-  buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
+  buffer->st_size  = finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
   buffer->st_mtime = buffer->st_ctime = ftToPosix (finfo.ftLastWriteTime);
+  // TODO: Handle time overflow
   return result;
 }
 
@@ -526,7 +530,7 @@ int FS(_wstat64) (const wchar_t *path, struct _stat64 *buffer)
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(wstat_helper) (path, &finfo);
 
-  ZeroMemory (buffer, sizeof (struct __stat64));
+  ZeroMemory (buffer, sizeof (struct _stat64));
   buffer->st_mode  = FS(get_mode) (path, &finfo);
   buffer->st_nlink = 1;
   buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
@@ -540,12 +544,13 @@ int FS(_wstat32i64) (const wchar_t *path, struct _stat32i64 *buffer)
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(wstat_helper) (path, &finfo);
 
-  ZeroMemory (buffer, sizeof (struct _stat));
+  ZeroMemory (buffer, sizeof (struct _stat32i64));
   buffer->st_mode  = FS(get_mode) (path, &finfo);
   buffer->st_nlink = 1;
   buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
   buffer->st_mtime = buffer->st_ctime = ftToPosix (finfo.ftLastWriteTime);
+  // TODO: Handle time overflow
   return result;
 }
 
@@ -553,11 +558,14 @@ int FS(_wstat64i32) (const wchar_t *path, struct _stat64i32 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(wstat_helper) (path, &finfo);
+  if (tinfo.nFileSizeHigh) {
+    return EOVERFLOW;
+  }
 
-  ZeroMemory (buffer, sizeof (struct _stat));
+  ZeroMemory (buffer, sizeof (struct _stat64i32));
   buffer->st_mode  = FS(get_mode) (path, &finfo);
   buffer->st_nlink = 1;
-  buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
+  buffer->st_size  = finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
   buffer->st_mtime = buffer->st_ctime = ftToPosix (finfo.ftLastWriteTime);
   return result;
