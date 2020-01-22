@@ -487,11 +487,11 @@ static int FS(_wstat_helper) (const wchar_t *path, WIN32_FILE_ATTRIBUTE_DATA *fi
   return 0;
 }
 
-static unsigned short FS(get_mode)(WIN32_FILE_ATTRIBUTE_DATA *finfo)
+static unsigned short FS(get_mode)(const wchat_t *path, WIN32_FILE_ATTRIBUTE_DATA *finfo)
 {
   unsigned short mode = _S_IREAD;
 
-  if (finfo.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
+  if (finfo->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
     mode |= (_S_IFDIR | _S_IEXEC);
   else
   {
@@ -501,7 +501,7 @@ static unsigned short FS(get_mode)(WIN32_FILE_ATTRIBUTE_DATA *finfo)
       mode |= _S_IEXEC;
   }
 
-  if (!(finfo.dwFileAttributes & FILE_ATTRIBUTE_READONLY))
+  if (!(finfo->dwFileAttributes & FILE_ATTRIBUTE_READONLY))
     mode |= _S_IWRITE;
 
   return mode;
@@ -513,7 +513,7 @@ int FS(_wstat32) (const wchar_t *path, struct _stat32 *buffer)
   int result = wstat_helper(path, &finfo);
 
   ZeroMemory (buffer, sizeof (struct __stat64));
-  buffer->st_mode  = FS(get_mode)(&finfo);
+  buffer->st_mode  = FS(get_mode)(path, &finfo);
   buffer->st_nlink = 1;
   buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
@@ -527,7 +527,7 @@ int FS(_wstat64) (const wchar_t *path, struct _stat64 *buffer)
   int result = FS(_wstat) (path, &finto);
 
   ZeroMemory (buffer, sizeof (struct __stat64));
-  buffer->st_mode  = FS(get_mode)(&finfo);
+  buffer->st_mode  = FS(get_mode)(path, &finfo);
   buffer->st_nlink = 1;
   buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
@@ -541,7 +541,7 @@ int FS(_wstat32i64) (const wchar_t *path, struct _stat32i64 *buffer)
   int result = wstat_helper(path, &finfo);
 
   ZeroMemory (buffer, sizeof (struct _stat));
-  buffer->st_mode  = FS(get_mode)(&finfo);
+  buffer->st_mode  = FS(get_mode)(path, &finfo);
   buffer->st_nlink = 1;
   buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
@@ -555,7 +555,7 @@ int FS(_wstat64i32) (const wchar_t *path, struct _stat64i32 *buffer)
   int result = wstat_helper(path, &finfo);
 
   ZeroMemory (buffer, sizeof (struct _stat));
-  buffer->st_mode  = FS(get_mode)(&finfo);
+  buffer->st_mode  = FS(get_mode)(path, &finfo);
   buffer->st_nlink = 1;
   buffer->st_size  = ((uint64_t)finfo.nFileSizeHigh << 32) + finfo.nFileSizeLow;
   buffer->st_atime = ftToPosix (finfo.ftLastAccessTime);
