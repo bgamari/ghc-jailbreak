@@ -487,7 +487,7 @@ static int FS(_wstat_helper) (const wchar_t *path, WIN32_FILE_ATTRIBUTE_DATA *fi
   return 0;
 }
 
-static unsigned short FS(get_mode)(const wchat_t *path, WIN32_FILE_ATTRIBUTE_DATA *finfo)
+static unsigned short FS(get_mode)(const wchar_t *path, WIN32_FILE_ATTRIBUTE_DATA *finfo)
 {
   unsigned short mode = _S_IREAD;
 
@@ -497,7 +497,7 @@ static unsigned short FS(get_mode)(const wchat_t *path, WIN32_FILE_ATTRIBUTE_DAT
   {
     mode |= _S_IFREG;
     DWORD type;
-    if (GetBinaryTypeW (_path, &type))
+    if (GetBinaryTypeW (path, &type))
       mode |= _S_IEXEC;
   }
 
@@ -524,7 +524,7 @@ int FS(_wstat32) (const wchar_t *path, struct _stat32 *buffer)
 int FS(_wstat64) (const wchar_t *path, struct _stat64 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
-  int result = FS(_wstat) (path, &finto);
+  int result = FS(_wstat) (path, &finfo);
 
   ZeroMemory (buffer, sizeof (struct __stat64));
   buffer->st_mode  = FS(get_mode)(path, &finfo);
