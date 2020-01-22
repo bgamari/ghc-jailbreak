@@ -1477,7 +1477,7 @@ fopen=muxcrt.__phyx_fopen
 _wstat=muxcrt.__phyx__wstat
 _wstat64=muxcrt.__phyx__wstat64
 _wstati64=muxcrt.__phyx__wstati64
-_wstat32=msvcrt._wstat
+_wstat32=muxcrt.__phyx__wstat
 
 _stat=muxcrt.__phyx__stat
 _stat64=muxcrt.__phyx__stat64
