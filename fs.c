@@ -397,7 +397,7 @@ int FS(_stat32) (const char *path, struct _stat32 *buffer)
   return result;
 }
 
-int FS(_stat64) (const char *path, struct __stat64 *buffer)
+int FS(_stat64) (const char *path, struct _stat64 *buffer)
 {
   wchar_t * const w_path = FS(to_wide) (path);
   int result = FS(_wstat64) (w_path, buffer);
@@ -521,7 +521,7 @@ int FS(_wstat32) (const wchar_t *path, struct _stat32 *buffer)
   return result;
 }
 
-int FS(_wstat64) (const wchar_t *path, struct __stat64 *buffer)
+int FS(_wstat64) (const wchar_t *path, struct _stat64 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = FS(_wstat) (path, &finto);
@@ -549,7 +549,7 @@ int FS(_wstat32i64) (const wchar_t *path, struct _stat32i64 *buffer)
   return result;
 }
 
-int FS(_wstat64i32) (const wchar_t *path, struct __stat64i32 *buffer)
+int FS(_wstat64i32) (const wchar_t *path, struct _stat64i32 *buffer)
 {
   WIN32_FILE_ATTRIBUTE_DATA finfo;
   int result = wstat_helper(path, &finfo);
