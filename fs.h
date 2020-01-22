@@ -39,8 +39,8 @@ int FS(_stat64i32) (const char *path, struct _stat64i32 *buffer);
 int FS(_stat32i64) (const char *path, struct _stat32i64 *buffer);
 int FS(_wstat32) (const wchar_t *path, struct _stat32 *buffer);
 int FS(_wstat64) (const wchar_t *path, struct _stat64 *buffer);
-int FS(_wstat64i32) (const char *path, struct _stat64i32 *buffer);
-int FS(_wstat32i64) (const char *path, struct _stat32i64 *buffer);
+int FS(_wstat64i32) (const wchar_t *path, struct _stat64i32 *buffer);
+int FS(_wstat32i64) (const wchar_t *path, struct _stat32i64 *buffer);
 int FS(_wrename) (const wchar_t *from, const wchar_t *to);
 int FS(rename) (const char *from, const char *to);
 
