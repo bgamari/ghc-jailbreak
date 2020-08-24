@@ -1543,3 +1543,5 @@ _wunlink=muxcrt.__phyx__wunlink
 
 remove=muxcrt.__phyx_remove
 _wremove=muxcrt.__phyx__wremove
+
+mkstemp=muxcrt.__phyx_mkstemp

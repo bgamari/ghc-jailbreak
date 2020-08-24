@@ -5,7 +5,7 @@ CC:=gcc
 CFLAGS+=-O2 -DUNICODE -D__USE_MINGW_ANSI_STDIO=1 -std=c99 -municode \
        -DWINVER=0x0601 -D_WIN32_WINNT=0x0601 -DUSE_BACKUPS=0 \
        -DONLY_CHOCOLATEY=0
-LDFLAGS=-ldbghelp -limagehlp
+LDFLAGS=-lole32 -lrpcrt4
 
 target:=$(shell uname -m)
 
@@ -17,8 +17,8 @@ clean:
 	rm -rf $(target)/*.exe
 
 iat-patcher: fs.c iat-patcher.c
-	$(CC) $(CFLAGS) fs.c iat-patcher.c -o $(target)/iat-patcher.exe $(LDFLAGS)
+	$(CC) $(CFLAGS) fs.c iat-patcher.c -o $(target)/iat-patcher.exe -ldbghelp -limagehlp $(LDFLAGS)
 
 runtime: $(target)/msvcrt.def fs.c phxcrt.c
-	$(CC) -shared phxcrt.c fs.c -o $(target)/muxcrt.dll
+	$(CC) -shared phxcrt.c fs.c -o $(target)/muxcrt.dll  $(LDFLAGS)
 	$(CC) -shared $(target)/msvcrt.def -o $(target)/phxcrt.dll

@@ -25,6 +25,8 @@
 #include <sys/types.h>
 #include <share.h>
 #include <errno.h>
+#include <rpcdce.h>
+#include <objbase.h>
 
 /* Duplicate a string, but in wide form. The caller is responsible for freeing
    the result. */
@@ -581,15 +583,101 @@ int FS(_wunlink) (const wchar_t *filename)
   free (_filename);
   return 0;
 }
+
 int FS(remove) (const char *path)
 {
   return FS(_unlink) (path);
 }
+
 int FS(_wremove) (const wchar_t *path)
 {
   return FS(_wunlink) (path);
 }
+
+static bool __createUUIDTempFileErrNo (wchar_t* pathName, wchar_t* prefix,
+                                       wchar_t* suffix, wchar_t** tempFileName)
+{
+  *tempFileName = NULL;
+  int retry = 5;
+  bool success = false;
+  while (retry-- > 0 && !success)
+    {
+      GUID guid;
+      ZeroMemory (&guid, sizeof (guid));
+      if (CoCreateGuid (&guid) != S_OK)
+        goto fail;
+
+      RPC_WSTR guidStr;
+      if (UuidToStringW ((UUID*)&guid, &guidStr) != S_OK)
+        goto fail;
+
+      /* We can't create a device path here since this path escapes the compiler
+         so instead return a normal path and have openFile deal with it.  */
+      wchar_t* devName = malloc (sizeof (wchar_t) * wcslen (pathName));
+      wcscpy (devName, pathName);
+      int len = wcslen (devName) + wcslen (suffix) + wcslen (prefix)
+              + wcslen (guidStr) + 3;
+      *tempFileName = malloc (len * sizeof (wchar_t));
+      if (*tempFileName == NULL)
+        goto fail;
+
+      /* Only add a slash if path didn't already end in one, otherwise we create
+         an invalid path.  */
+      bool slashed = devName[wcslen(devName)-1] == '\\';
+      wchar_t* sep = slashed ? L"" : L"\\";
+      if (-1 == swprintf_s (*tempFileName, len, L"%ls%ls%ls-%ls%ls",
+                            devName, sep, prefix, guidStr, suffix))
+        goto fail;
+
+      free (devName);
+      RpcStringFreeW (&guidStr);
+      /* This should never happen because GUIDs are unique.  But in case hell
+         froze over let's check anyway.  */
+      DWORD dwAttrib = GetFileAttributesW (*tempFileName);
+      success = (dwAttrib == INVALID_FILE_ATTRIBUTES
+                 || (dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
+      if (!success)
+        free (*tempFileName);
+    }
+
+  return success;
+
+fail:
+  if (*tempFileName != NULL) {
+    free (*tempFileName);
+  }
+  setErrNoFromWin32Error();
+  return false;
+}
+
+int FS(mkstemp) (char *template)
+{
+  // N.B. We disregard the template entirely.
+  (void) template;
+
+  wchar_t tmpdir[MAX_PATH+1];
+  if (GetTempPathW(MAX_PATH+1, tmpdir) > MAX_PATH+1) {
+    return setErrNoFromWin32Error();
+  }
+
+  for (int i=0; i<16; i++) {
+    wchar_t *out;
+    if (__createUUIDTempFileErrNo(tmpdir, L"phx", L"tmp", &out)) {
+      // successfully generated a name, try creating it
+      HANDLE *hdl = CreateFileW(out, GENERIC_READ | GENERIC_WRITE, 0, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
+      free(out);
+      if (hdl != INVALID_HANDLE_VALUE) {
+        return handle_to_fd(hdl, O_RDWR);
+      }
+    }
+  }
+
+  // We couldn't create a file after many attempts; fail.
+  return setErrNoFromWin32Error();
+}
+
 #else
+
 FILE *FS(fopen) (const char* filename, const char* mode)
 {
   return fopen (filename, mode);
