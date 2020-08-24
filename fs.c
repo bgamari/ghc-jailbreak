@@ -175,6 +175,23 @@ int setErrNoFromWin32Error () {
   return -1;
 }
 
+/* Convert a Windows HANDLE to a file descriptor and apply the provided option flags.
+ * Returns -1 and sets errno on failure
+ */
+static int handle_to_fd(HANDLE *hResult, int oflag)
+{
+  const int flag_mask = _O_APPEND | _O_RDONLY | _O_TEXT | _O_WTEXT;
+  int fd = _open_osfhandle ((intptr_t)hResult, oflag & flag_mask);
+  if (-1 == fd)
+    return setErrNoFromWin32Error ();
+
+  /* Finally we can change the mode to the requested one.  */
+  const int mode_mask = _O_TEXT | _O_BINARY | _O_U16TEXT | _O_U8TEXT | _O_WTEXT;
+  if ((oflag & mode_mask) && (-1 == _setmode (fd, oflag & mode_mask)))
+    return setErrNoFromWin32Error ();
+
+  return fd;
+}
 
 #define HAS_FLAG(a,b) (((a) & (b)) == (b))
 
@@ -276,19 +293,7 @@ int FS(swopen) (const wchar_t* filename, int oflag, int shflag, int pmode)
   if (INVALID_HANDLE_VALUE == hResult)
     return setErrNoFromWin32Error ();
 
-  /* Now we have a Windows handle, we have to convert it to an FD and apply
-     the remaining flags.  */
-  const int flag_mask = _O_APPEND | _O_RDONLY | _O_TEXT | _O_WTEXT;
-  int fd = _open_osfhandle ((intptr_t)hResult, oflag & flag_mask);
-  if (-1 == fd)
-    return setErrNoFromWin32Error ();
-
-  /* Finally we can change the mode to the requested one.  */
-  const int mode_mask = _O_TEXT | _O_BINARY | _O_U16TEXT | _O_U8TEXT | _O_WTEXT;
-  if ((oflag & mode_mask) && (-1 == _setmode (fd, oflag & mode_mask)))
-    return setErrNoFromWin32Error ();
-
-  return fd;
+  return handle_to_fd(hResult, oflag);
 }
 
 int FS(translate_mode) (const wchar_t* mode)
